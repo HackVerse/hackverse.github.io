@@ -6,29 +6,16 @@ import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
 export function CanvasRevealEffectDemo() {
   return (
     <div className="relative overflow-hidden bg-black z-10 min-h-screen">
-      {/* Mobile Background */}
-      <div
-        className="absolute inset-0 z-10 block md:hidden"
-        style={{
-          backgroundImage: `url('/bg_prof_mobile.JPG')`,
-          backgroundSize: 'fill',
-          backgroundPosition: 'right',
-          backgroundRepeat: 'no-repeat',
-          opacity: 1
-        }}
-      ></div>
+<div
+  className="absolute inset-0 z-10"
+  style={{
+    backgroundImage: `url('/bg_prof.JPG')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'right',
+    backgroundAttachment: 'fixed'
+  }}
+></div>
 
-      {/* Desktop Background */}
-      <div
-        className="absolute inset-0 z-10 hidden md:block"
-        style={{
-          backgroundImage: `url('/bg_prof.JPG')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'right',
-          backgroundAttachment: 'fixed',
-          opacity: 1
-        }}
-      ></div>
 
       {/* Title Container */}
       <div className="relative flex justify-center items-start pt-8 md:pt-20 z-20 w-full">
@@ -39,7 +26,8 @@ export function CanvasRevealEffectDemo() {
 
       {/* Cards Section */}
       <div className="relative flex items-center justify-center min-h-screen pt-20 md:pt-0 pb-20">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20">
+        <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20  justify-items-center">
+          
           {/* Card Components */}
           <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
             <CanvasRevealEffect
@@ -64,7 +52,6 @@ export function CanvasRevealEffectDemo() {
               ]}
             />
           </Card>
-
           <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>
             <CanvasRevealEffect
               animationSpeed={3}
@@ -100,7 +87,7 @@ const Card = ({ title, icon, children }) => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-[#a9252c] group/canvas-card flex items-center justify-center dark:border-[#a9252c] w-full p-4 relative aspect-[2/3] h-[280px] sm:h-[320px] lg:h-[400px]"
+      className="border border-[#a9252c] group/canvas-card flex items-center justify-center dark:border-[#a9252c] w-[70%] sm:w-full p-4 relative aspect-[2/3] h-[280px] sm:h-[320px] lg:h-[400px] mb-4 sm:mb-0"
     >
       <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -top-3 -left-3 dark:text-white text-white" />
       <Icon className="absolute h-4 w-4 md:h-6 md:w-6 -bottom-3 -left-3 dark:text-white text-white" />
@@ -127,7 +114,7 @@ const Card = ({ title, icon, children }) => {
       </div>
     </div>
   );
-};
+}
 
 const AceternityIcon = () => {
   return (

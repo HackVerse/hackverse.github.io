@@ -76,7 +76,7 @@ const FAQ = () => {
   <span className="bg-[#7B181D] px-4 pb-2 inline-block">EXPLORE OUR FAQS</span>
 </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-8">
           {/* Left Column */}
           <div className="space-y-6">
             <Accordion type="single" collapsible className="w-full">

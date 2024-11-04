@@ -118,17 +118,26 @@ export function TimelineDemo() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center bg-black text-white overflow-hidden">
-      {/*  dot background */}
+      {/* dot background */}
       <div className="absolute inset-0 w-full h-full bg-[#080808]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'dot-pattern\' patternUnits=\'userSpaceOnUse\' width=\'30\' height=\'30\'%3E%3Ccircle cx=\'15\' cy=\'15\' r=\'2\' fill=\'%23666\' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100\' height=\'100\' fill=\'url(%23dot-pattern)\' /%3E%3C/svg%3E")' }}></div>
   
-      {/* timeline background on top of dots */}
-      <div className="absolute inset-0 w-full h-full bg-center bg-cover" style={{ backgroundImage: 'url("/bg-timeline.png")' }}></div>
+      {/* Mobile timeline background */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-right bg-cover md:hidden" 
+        style={{ backgroundImage: 'url("/bg-timeline-mobile.png")' }}
+      ></div>
+
+      {/* Desktop timeline background */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-right bg-cover hidden md:block" 
+        style={{ backgroundImage: 'url("/bg-timeline.png")' }}
+      ></div>
   
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
   
       <div className="relative z-10 max-w-7xl mx-auto pt-10 pb-[-5] px-4 md:px-8 lg:px-0">
         <h2 className="text-4xl md:text-6xl mt-4 -mb-44 font-bold text-white dark:text-white max-w-4xl">
-        HEIST <span className="bg-[#7B181D] px-4 pb-2">TIMELINE</span>
+          HEIST <span className="bg-[#7B181D] px-4 pb-2">TIMELINE</span>
         </h2>
       </div>
       

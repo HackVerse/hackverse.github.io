@@ -101,7 +101,7 @@ const Navbar = () => {
       <li className="p-1 font-normal hover:text-red-900">
         <Link to="/team" onClick={() => setIsOpen(false)} className="flex items-center">TEAM</Link>
       </li>
-      <div className="flex items-center gap-4 p-1">
+      <div className="flex items-center gap-4 p-1 md:hidden">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
           <IconBrandLinkedin strokeWidth={1.2} className="hover:text-red-900" />
         </a>

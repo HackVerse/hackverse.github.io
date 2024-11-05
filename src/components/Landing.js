@@ -49,7 +49,7 @@ const Landing = () => {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="xMinYMin meet"
           >
-            <path d="M0 0L478 243V587H0V0Z" fill="#2B0B0C" />
+            {/* <path d="M0 0L478 243V587H0V0Z" fill="#2B0B0C" />
             <line
               x1="277.782"
               y1="567.036"
@@ -57,15 +57,17 @@ const Landing = () => {
               y2="94.0364"
               stroke="#DADADA"
               strokeWidth="26"
-            />
-            <line
+            /> */}
+            {/* <line
               x1="492.269"
               y1="546.109"
               x2="-88.731"
               y2="319.109"
               stroke="#DADADA"
               strokeWidth="26"
-            />
+            /> */}
+            <path d="M0 0L478 243V587H0V0Z" fill="#2B0B0C"/>
+
             <path d="M858 59L478 243V587H858V59Z" fill="#360E10" />
           </svg>
         </motion.div>
@@ -88,7 +90,7 @@ const Landing = () => {
         </motion.div>
 
         {/* Navigation Container */}
-        <div className="absolute bottom-0 right-0 h-fit w-full">
+        <div className="absolute bottom-0 right-0 h-fit w-full md:hidden">
           {/* Navigation Menu */}
           <motion.div
             className="relative flex flex-col items-end text-lg lg:text-xl font-bold w-full px-4 pb-8 lg:pb-16 z-10"

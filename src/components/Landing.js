@@ -1,177 +1,111 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+"use client";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+const buttonVariants = {
+  hover: { scale: 1.05, transition: { duration: 0.2 } },
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const Landing = () => {
-  const handleScroll = (id) => {
-    const element = document.getElementById(id);
-    const offset = 64;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = element.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
+const LandingPage = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const landingRef = useRef(null);
-  const isLandingInView = useInView(landingRef, { triggerOnce: false });
+  const textVariants = (delay) => ({
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay } },
+  });
+
+  const imageVariants = (delay) => ({
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, delay } },
+  });
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   return (
-    <motion.div
-      ref={landingRef}
+    <motion.div 
+      ref={ref}
       initial="hidden"
-      animate={isLandingInView ? "visible" : "hidden"}
-      variants={fadeIn}
-      className="w-full h-screen relative flex flex-col lg:flex-row pt-14 lg:pt-16 overflow-hidden" 
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+      style={{ background: 'linear-gradient(180deg, #360202, #000)' }}
+      className="relative flex flex-col md:flex-row h-screen min-h-[660px] text-white overflow-hidden"
     >
-      {/* Left Section - Full width on mobile */}
-      <motion.div
-        className="w-full lg:w-[60%] flex items-center justify-end flex-col relative bg-[#481516] h-screen"
-      >
-        {/* SVG positioned on the left */}
-        <motion.div
-          className="absolute bottom-0 left-0 w-full -z-0"
-          initial={{ opacity: 0 }}
-          animate={isLandingInView ? { opacity: 1, transition: { delay: 0.5, duration: 1.2 } } : { opacity: 0 }}
+      {/* Left Section */}
+      <div className="md:w-1/3 w-full flex flex-col justify-center items-start mt-24 md:mt-0 pl-8 md:pl-16 pr-4 md:pr-0 z-10">
+        
+        {/* HACKVERSE 5.0 */}
+        <motion.h1 
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 whitespace-nowrap" 
+          variants={textVariants(0.2)}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+
         >
-          <svg
-            className="w-full h-auto"
-            viewBox="0 0 768 526"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMinYMin meet"
+          <span>HACKVERSE </span>
+          <span className="bg-[#7B181D] px-4 pb-2">5.0</span>
+        </motion.h1>
+
+        {/* 24-hour Hackathon @ NITK */}
+        <motion.p 
+          className="text-2xl md:text-3xl text-[#ffffffaa] lg:text-4xl font-extralight mb-10 md:mb-[20vh] uppercase whitespace-nowrap"
+          variants={textVariants(0.3)}
+        >
+          24 hour hackathon @ NITK
+        </motion.p>
+
+        {/* Coming Soon */}
+        <motion.p 
+          className="text-2xl text-[#ffffffaa] md:text-3xl lg:text-4xl font-extralight uppercase mb-8"
+          variants={textVariants(0.4)}
+        >
+          Coming soon...
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div className="flex text-lg md:text-xl gap-4" variants={textVariants(0.5)}>
+          <motion.button 
+            className="px-8 py-2 whitespace-nowrap rounded-md bg-[#360E10] font-bold text-[#dadada] tracking-widest uppercase transform border-2 border-[#360E10] border-solid"
+            variants={buttonVariants}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
           >
-            {/* <path d="M0 0L478 243V587H0V0Z" fill="#2B0B0C" />
-            <line
-              x1="277.782"
-              y1="567.036"
-              x2="-94.2184"
-              y2="94.0364"
-              stroke="#DADADA"
-              strokeWidth="26"
-            /> */}
-            {/* <line
-              x1="492.269"
-              y1="546.109"
-              x2="-88.731"
-              y2="319.109"
-              stroke="#DADADA"
-              strokeWidth="26"
-            /> */}
-            <path d="M0 0L478 243V587H0V0Z" fill="#2B0B0C"/>
-
-            <path d="M858 59L478 243V587H858V59Z" fill="#360E10" />
-          </svg>
-        </motion.div>
-
-        {/* Main Heading */}
-        <motion.div
-          className="absolute left-4 lg:left-[100px] top-0 text-[#dadada] mt-10"
-          variants={fadeIn}
-        >
-          <p className="font-bold">HEIST COMING SOON...</p>
-        </motion.div>
-
-        {/* Center Image */}
-        <motion.div
-          className="w-full absolute top-[20%] lg:top-[30%] z-0 flex justify-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={isLandingInView ? { opacity: 1, scale: 1, transition: { delay: 0.8, duration: 1 } } : { opacity: 0, scale: 0.9 }}
-        >
-          <img src="svgs/text.svg" alt="" className="w-[85%] lg:w-[75%] object-cover" />
-        </motion.div>
-
-        {/* Navigation Container */}
-        <div className="absolute bottom-0 right-0 h-fit w-full md:hidden">
-          {/* Navigation Menu */}
-          <motion.div
-            className="relative flex flex-col items-end text-lg lg:text-xl font-bold w-full px-4 pb-8 lg:pb-16 z-10"
-            variants={fadeIn}
+            DEVFOLIO post
+          </motion.button>
+          <motion.button 
+            className="px-8 py-2 rounded-md bg-[#dadada] font-bold text-[#360E10] tracking-widest uppercase transform border-2 border-[#360E10] border-solid"
+            variants={buttonVariants}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
           >
-            <div className="flex flex-col items-end mr-5">
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('about')}
-              >
-                ABOUT
-              </button>
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('prizes')}
-              >
-                PRIZES
-              </button>
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('speakers-judges')}
-              >
-                JUDGES & SPEAKERS
-              </button>
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('tracks')}
-              >
-                TRACKS
-              </button>
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('timeline')}
-              >
-                TIMELINE
-              </button>
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('sponsors')}
-              >
-                SPONSORS
-              </button>
-              <button
-                className="hover:underline cursor-pointer mb-3 text-[#dadada]"
-                onClick={() => handleScroll('faq')}
-              >
-                FAQS
-              </button>
-            </div>
+            NITK
+          </motion.button>
+        </motion.div>
+      </div>
 
-            {/* Red Line */}
-            <div className="absolute h-full w-0.5 bg-red-700 right-0 top-0 mr-3" /> 
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Right Section with Image - Hidden on mobile */}
-      <motion.div
-        className="hidden lg:flex w-[40%] items-center justify-end bg-black"
-        variants={fadeIn}
-      >
-        <div className="w-[80%] mb-20">
+      {/* Right Section with Staggered Images */}
+      <div className="md:w-2/3 w-full h-full flex items-center justify-center mt-0 md:mt-10 relative">
+        {["bg-landing-1.png", "bg-landing-2.png", "bg-landing-3.png", "bg-landing-4.png"].map((src, index) => (
           <motion.img
-            src="/landingimage.png"
-            alt="Landing"
-            className="h-full object-cover"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isLandingInView ? { opacity: 1, scale: 1, transition: { duration: 3 } } : { opacity: 0, scale: 0.95 }}
+            key={src}
+            src={`/${src}`}
+            alt={`Background ${index + 1}`}
+            className="absolute max-w-[90%] max-h-[90vh] md:max-h-[80vh] w-auto h-auto object-contain z-0"
+            variants={imageVariants(index * 0.3)}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
           />
-          <motion.div className="mt-5 space-x-5" variants={fadeIn}>
-            <button className="px-8 py-2 rounded-md bg-[#360E10] font-bold text-[#dadada] tracking-widest uppercase transform hover:scale-105 transition-colors duration-200 border-2 border-[#360E10] border-solid">
-              DEVFOLIO post
-            </button>
-            <button className="px-8 py-2 rounded-md bg-[#dadada] font-bold text-[#360E10] tracking-widest uppercase transform hover:scale-105 transition-colors duration-200 border-2 border-[#360E10] border-solid">
-              NITK
-            </button>
-          </motion.div>
-        </div>
-      </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 };
 
-export default Landing;
+export default LandingPage;

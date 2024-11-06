@@ -92,7 +92,7 @@ export default function About() {
           className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff] mt-10"
           style={{ lineHeight: "1.5" }}
         >
-          Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 pb-2">where the heist meets technology</span>
+          Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 whitespace-nowrap pb-2">where the heist meets technology</span>
         </motion.h1>
 
         <motion.p

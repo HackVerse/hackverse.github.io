@@ -1,20 +1,18 @@
+//to add images to galley folder name it: IMG_1.JPG to IMG_x.JPG
+
 import React from 'react';
 import LayoutGrid from './ui/layout-grid';
 
 const ROW_PATTERNS = [
-  // Pattern 1: [1, 1, 1] - Three single-column images
   [
     { span: 1 }, { span: 1 }, { span: 1 }
   ],
-  // Pattern 2: [2, 1] - Two-column image followed by single-column
   [
     { span: 2 }, { span: 1 }
   ],
-  // Pattern 3: [1, 2] - Single-column followed by two-column
   [
     { span: 1 }, { span: 2 }
   ],
-  // Pattern 4: [3] - Full-width image
   [
     { span: 3 }
   ]
@@ -25,7 +23,8 @@ const generateCards = () => {
   let currentImageIndex = 1;
 
   const createCard = (span) => {
-    if (currentImageIndex <= 42) {
+    if (currentImageIndex <= 42) //change 42 to last image number
+    {
       cards.push({
         id: currentImageIndex,
         className: `h-96 md:col-span-${span}`,
@@ -35,9 +34,8 @@ const generateCards = () => {
     }
   };
 
-  // Generate enough rows to display all 42 images
-  while (currentImageIndex <= 42) {
-    // Randomly select a pattern for this row
+  while (currentImageIndex <= 42) //change 42 to last image number
+    {
     const pattern = ROW_PATTERNS[Math.floor(Math.random() * ROW_PATTERNS.length)];
 
     // Apply the pattern to create cards for this row

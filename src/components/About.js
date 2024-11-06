@@ -18,13 +18,11 @@ export default function About() {
   const imageRef = useRef(null);
   const lampRef = useRef(null);
   const isLampInView = useInView(lampRef, { triggerOnce: false });
-  const containerRef = useRef(null); // Ref for the main container
-  const isInView = useInView(containerRef, { triggerOnce: false }); // Detect if the main container is in view
+  const containerRef = useRef(null); 
+  const isInView = useInView(containerRef, { triggerOnce: false });
 
-  // State to control flickering
   const [isFlickering, setIsFlickering] = useState(false);
 
-  // Horror flickering animation with very fast, erratic intervals
   const horrorFlicker = {
     initial: { opacity: 1 },
     animate: isFlickering
@@ -36,7 +34,7 @@ export default function About() {
             ease: "easeInOut",
           },
         }
-      : { opacity: 1 }, // No flickering if not in view
+      : { opacity: 1 }, 
   };
 
   const fadeIn = {
@@ -48,8 +46,7 @@ export default function About() {
     let interval;
 
     if (isInView) {
-      // Start flickering when section is in view
-      setIsFlickering(true); // Start the horror flickering
+      setIsFlickering(true); 
       if (imageRef.current && lampRef.current) {
         imageRef.current.style.opacity = "1";
         lampRef.current.style.opacity = "1";
@@ -57,29 +54,26 @@ export default function About() {
 
       interval = setInterval(() => {
         if (imageRef.current && lampRef.current) {
-          // Set both elements to zero opacity
           imageRef.current.style.opacity = "0";
           lampRef.current.style.opacity = "0";
 
           setTimeout(() => {
-            // Restore opacity to 1
             imageRef.current.style.opacity = "1";
             lampRef.current.style.opacity = "1";
-          }, 200); // Brief flicker duration at zero
+          }, 200); 
         }
-      }, 6000); // Flicker every 6 seconds
+      }, 6000);
     } else {
-      // Reset flickering when out of view
       clearInterval(interval);
-      setIsFlickering(false); // Stop the horror flickering
+      setIsFlickering(false); 
     }
 
     return () => clearInterval(interval);
-  }, [isInView]); // Restart effect every time the section comes into view
+  }, [isInView]); 
 
   return (
     <div
-      ref={containerRef} // Attach ref to detect when container is in view
+      ref={containerRef} 
       className="relative min-h-screen bg-[#000000] flex flex-col md:flex-row items-center justify-center px-4 md:px-12 overflow-hidden"
     >
       {/* Left Section */}
@@ -90,7 +84,7 @@ export default function About() {
           animate={isTitleInView ? "visible" : "hidden"}
           variants={fadeIn}
           className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff] mt-10"
-          style={{ lineHeight: "1.5" }}
+          style={{ lineHeight: "1.5" }} //Title
         >
           Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 whitespace-nowrap pb-2">where the heist meets technology</span>
         </motion.h1>
@@ -101,7 +95,7 @@ export default function About() {
           animate={isText1InView ? "visible" : "hidden"}
           variants={fadeIn}
           transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
-          className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
+          className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0" //para 1
         >
           Join us at HackVerse, a platform that celebrates the power of enthusiastic minds to ideate innovative solutions for complex issues across India. It all started with a vision to bring together like-minded hackers to our alma mater in NITK Surathkal, and we're thrilled to be the pioneers of this unique initiative.
         </motion.p>
@@ -111,7 +105,7 @@ export default function About() {
           animate={isText2InView ? "visible" : "hidden"}
           variants={fadeIn}
           transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
-          className="text-base pt-4 sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0"
+          className="text-base pt-4 sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center md:text-left px-2 sm:px-6 md:px-0" //para 2
         >
           Be a part of an experience that celebrates innovation and provides developers with the opportunity to showcase their potential to the fullest. Get inspired by industry leaders through engaging keynotes and workshops.
         </motion.p>
@@ -121,7 +115,7 @@ export default function About() {
       <div className="relative w-full md:w-2/5 flex items-center justify-center mt-8 md:mt-0">
         {/* Bottom Layer: Lamp */}
         <motion.div
-          ref={lampRef} // Attach ref for the lamp
+          ref={lampRef} 
           className="absolute inset-0 flex items-center justify-center z-0"
           variants={horrorFlicker}
           initial="initial"
@@ -142,7 +136,7 @@ export default function About() {
           style={{ transform: "translateY(40px)" }}
         >
           <motion.img
-            src="hackverse-img.png" // Replace with the correct image path
+            src="hackverse-img.png" 
             alt="Lamp Demo"
             className="w-96 sm:w-32 md:w-auto h-auto object-contain"
             variants={horrorFlicker}

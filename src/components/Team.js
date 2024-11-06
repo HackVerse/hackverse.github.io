@@ -1,6 +1,8 @@
 import React from 'react';
 import HoverEffect from './ui/card-hover-effect-2';
 
+ /* team members info */
+
 const teamMembers = {
   patron: [
     {

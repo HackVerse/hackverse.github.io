@@ -3,7 +3,6 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-black text-white p-10 px-6">
-      {/* Main content section */}
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0">
         {/* Left section for HackVerse info */}
         <div className="lg:w-1/2 text-center space-y-3">

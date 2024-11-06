@@ -2,11 +2,15 @@ import React, { useCallback } from "react";
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
+ /* Stats Content */
+
 const STATS_DATA = [
   { number: "1500+", label: "Total Registrations" },
   { number: "400+", label: "Hackers Hosted" },
   { number: "140+", label: "Engineering Institutes" },
 ];
+
+ /* Repeating Background Text */
 
 const BackgroundText = React.memo(() => {
   return (

@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+ /* Repeating Background Text */
+
 const BackgroundText = React.memo(() => {
     return (
       <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36 ">
@@ -165,13 +167,12 @@ const BackgroundText = React.memo(() => {
 const Sponsor = () => {
   return (
     <section id="sponsors" className="relative bg-black min-h-screen flex flex-col items-center justify-center px-8 py-20 text-[#5c5c5c]">
-      {/* Repeating Background Text */}
       <BackgroundText />
 
-      {/* Foreground Content */}
-      <div className="relative z-10 text-center container mx-auto" id="sponsor">
+      {/* Content */}
+      <div className="relative z-10 text-center container mx-auto"  id="sponsor">
         <h1 className="text-center text-4xl md:text-6xl font-extrabold mb-10 text-[#ffffff]"><span className="bg-[#7B181D] px-4 pb-2">SPONSORS</span></h1>
-
+      {/* Desc */}
         <p className="text-center text-white mb-6">
           <strong>Interested in sponsoring?</strong> Contact us at{' '}
           <a
@@ -186,7 +187,7 @@ const Sponsor = () => {
           and break through the snow barrier to shape the future of tech!
         </p>
 
-        {/* Sponsor Logos */}
+        {/* Sponsor Info*/}
         <div className="flex flex-wrap justify-center items-center">
           <a href="https://www.esamudaay.com/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
             <img src="./img/eSamudaay.webp" className="w-40 hover:scale-105 transition-transform" alt="eSamudaay" />

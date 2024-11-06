@@ -1,3 +1,5 @@
+//to add add people go to ui/card-hover-effect.jsx
+
 import { HoverEffect } from "../../src/components/ui/card-hover-effect";
 
 export function SpeakersJudges() {
@@ -21,7 +23,7 @@ export function SpeakersJudges() {
         }}
       ></div>
 
-      {/* Content */}
+      {/* Title */}
       <div className="relative text-white text-center z-10">
         <h1 className="font-bold text-4xl md:text-6xl">
           SPEAKERS & <span className="bg-[#7B181D] px-4 pb-2">JUDGES</span>

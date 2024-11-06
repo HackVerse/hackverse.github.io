@@ -39,30 +39,29 @@ const LandingPage = () => {
       {/* Left Section */}
       <div className="md:w-1/3 w-full flex flex-col justify-center items-start mt-24 md:mt-0 pl-8 md:pl-16 pr-4 md:pr-0 z-10">
         
-        {/* HACKVERSE 5.0 */}
         <motion.h1 
           className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 whitespace-nowrap" 
           variants={textVariants(0.2)}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-
+          //title
         >
           <span>HACKVERSE </span>
           <span className="bg-[#7B181D] px-4 pb-2">5.0</span>
         </motion.h1>
 
-        {/* 24-hour Hackathon @ NITK */}
         <motion.p 
           className="text-2xl md:text-3xl text-[#ffffffaa] lg:text-4xl font-extralight mb-10 md:mb-[20vh] uppercase whitespace-nowrap"
           variants={textVariants(0.3)}
+            //subtitle
         >
           24 hour hackathon @ NITK
         </motion.p>
 
-        {/* Coming Soon */}
         <motion.p 
           className="text-2xl text-[#ffffffaa] md:text-3xl lg:text-4xl font-extralight uppercase mb-8"
           variants={textVariants(0.4)}
+          //date
         >
           Coming soon...
         </motion.p>
@@ -90,7 +89,7 @@ const LandingPage = () => {
         </motion.div>
       </div>
 
-      {/* Right Section with Staggered Images */}
+      {/* Right Section with Images */}
       <div className="md:w-2/3 w-full h-full flex items-center justify-center mt-0 md:mt-10 relative">
         {["bg-landing-1.png", "bg-landing-2.png", "bg-landing-3.png", "bg-landing-4.png"].map((src, index) => (
           <motion.img

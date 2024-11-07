@@ -125,13 +125,13 @@ export function TimelineDemo() {
       {/* Mobile timeline background */}
       <div 
         className="absolute inset-0 w-full h-full bg-right bg-cover md:hidden" 
-        style={{ backgroundImage: 'url("/bg-timeline-mobile.png")' }}
+        style={{ backgroundImage: 'url("backgrounds/bg-timeline-mobile.png")' }}
       ></div>
 
       {/* Desktop timeline background */}
       <div 
         className="absolute inset-0 w-full h-full bg-right bg-cover hidden md:block" 
-        style={{ backgroundImage: 'url("/bg-timeline.png")' }}
+        style={{ backgroundImage: 'url("backgrounds/bg-timeline.png")' }}
       ></div>
   
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>

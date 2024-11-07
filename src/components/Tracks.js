@@ -9,13 +9,13 @@ export function CanvasRevealEffectDemo() {
       <div
         className="absolute inset-0 z-10 bg-cover bg-right bg-fixed"
         style={{
-          backgroundImage: `url('/bg_prof.JPG')`,
+          backgroundImage: `url('backgrounds/bg_prof.JPG')`,
         }}
       ></div>
       <div
         className="absolute inset-0 z-10 bg-cover bg-bottom  md:hidden"
         style={{
-          backgroundImage: `url('/bg_prof_mobile.jpg')`,
+          backgroundImage: `url('backgrounds/bg_prof_mobile.jpg')`,
         }}
       ></div>
 
@@ -28,7 +28,7 @@ export function CanvasRevealEffectDemo() {
 
       {/* Cards  */}
       <div className="relative flex items-center justify-start min-h-screen pt-20 md:pt-0 pb-20">
-        <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20 md:ml-[10%] md:mr-0 w-[80%] justify-items-center">
+        <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20 justify-items-center">
           
           {/* Card Content */}
           <Card title="Taj Mahal Heist" icon={<AceternityIcon />}>

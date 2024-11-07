@@ -136,9 +136,9 @@ export default function About() {
           style={{ transform: "translateY(40px)" }}
         >
           <motion.img
-            src="hackverse-img.png" 
+            src="img/hackverse-img.png" 
             alt="Lamp Demo"
-            className="w-96 sm:w-32 md:w-auto h-auto object-contain"
+            className="w-96 sm:w-32 md:w-auto h-auto mt-4 object-contain"
             variants={horrorFlicker}
             initial="initial"
             animate={isFlickering ? "animate" : "initial"}

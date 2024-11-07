@@ -15,21 +15,26 @@ const Navbar = () => {
   }, []);
 
   const handleScroll = (id) => {
-    if (window.location.pathname !== '/') {
-      navigate(`/#${id}`);
+    if (id === 'home' || id === 'gallery' || id === 'team') {
+      navigate(`/${id === 'home' ? '' : id}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      const element = document.getElementById(id);
-      if (element) {
-        const offset = 64;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset - parseFloat(getComputedStyle(document.documentElement).fontSize) * 4;
+      if (window.location.pathname !== '/') {
+        navigate(`/#${id}`);
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 64;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset - parseFloat(getComputedStyle(document.documentElement).fontSize) * 4;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        }
       }
     }
     setIsOpen(false);
@@ -95,11 +100,11 @@ const Navbar = () => {
           <a href="#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</a>
         )}
       </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/gallery" onClick={() => setIsOpen(false)} className="flex items-center">GALLERY</Link>
+      <li className="p-1 font-normal hover:text-red-900 ">
+        <Link to="/gallery" onClick={() => handleScroll('gallery')} className="flex items-center">GALLERY</Link>
       </li>
       <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/team" onClick={() => setIsOpen(false)} className="flex items-center">TEAM</Link>
+        <Link to="/team" onClick={() => handleScroll('team')} className="flex items-center">TEAM</Link>
       </li>
       <div className="flex items-center gap-4 p-1 md:hidden">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">

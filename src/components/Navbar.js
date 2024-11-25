@@ -42,70 +42,41 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const navItems = [
+    { id: 'home', label: 'HOME' },
+    { id: 'about', label: 'ABOUT' },
+    { id: 'prizes', label: 'PRIZES' },
+    { id: 'speakers-judges', label: 'JUDGES & SPEAKERS' },
+    { id: 'tracks', label: 'TRACKS' },
+    { id: 'timeline', label: 'TIMELINE' },
+    { id: 'sponsors', label: 'SPONSORS' },
+    { id: 'faq', label: 'FAQS' },
+    { id: 'gallery', label: 'GALLERY' },
+    { id: 'team', label: 'TEAM' }
+  ];
+
   const navList = (
     <ul className="mx-5 mt-4 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/" onClick={() => handleScroll('home')} className="flex items-center">HOME</Link>
-        ) : (
-          <a href="#home" onClick={() => handleScroll('home')} className="flex items-center">HOME</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#about" onClick={() => handleScroll('about')} className="flex items-center">ABOUT</Link>
-        ) : (
-          <a href="#about" onClick={() => handleScroll('about')} className="flex items-center">ABOUT</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#prizes" onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</Link>
-        ) : (
-          <a href="#prizes" onClick={() => handleScroll('prizes')} className="flex items-center">PRIZES</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#speakers-judges" onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</Link>
-        ) : (
-          <a href="#speakers-judges" onClick={() => handleScroll('speakers-judges')} className="flex items-center">JUDGES & SPEAKERS</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#tracks" onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</Link>
-        ) : (
-          <a href="#tracks" onClick={() => handleScroll('tracks')} className="flex items-center">TRACKS</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#timeline" onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</Link>
-        ) : (
-          <a href="#timeline" onClick={() => handleScroll('timeline')} className="flex items-center">TIMELINE</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#sponsors" onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</Link>
-        ) : (
-          <a href="#sponsors" onClick={() => handleScroll('sponsors')} className="flex items-center">SPONSORS</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        {isLargeScreen ? (
-          <Link to="/#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</Link>
-        ) : (
-          <a href="#faq" onClick={() => handleScroll('faq')} className="flex items-center">FAQS</a>
-        )}
-      </li>
-      <li className="p-1 font-normal hover:text-red-900 ">
-        <Link to="/gallery" onClick={() => handleScroll('gallery')} className="flex items-center">GALLERY</Link>
-      </li>
-      <li className="p-1 font-normal hover:text-red-900">
-        <Link to="/team" onClick={() => handleScroll('team')} className="flex items-center">TEAM</Link>
-      </li>
+      {navItems.map((item, index, arr) => (
+        <li key={item.id} className="p-1 font-normal hover:text-red-900 relative">
+          {isLargeScreen ? (
+            <Link to={item.id === 'home' ? '/' : `/#${item.id}`} onClick={() => handleScroll(item.id)} className="flex items-center">
+              {item.label}
+            </Link>
+          ) : (
+            <a href={`#${item.id}`} onClick={() => handleScroll(item.id)} className="flex items-center">
+              {item.label}
+            </a>
+          )}
+          {/* Add the vertical bar only between items on large screens */}
+          {index < arr.length - 1 && (
+            <span className="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-white">
+              |
+            </span>
+          )}
+        </li>
+      ))}
+      {/* Social Icons (only visible on small screens) */}
       <div className="flex items-center gap-4 p-1 md:hidden">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
           <IconBrandLinkedin strokeWidth={1.2} className="hover:text-red-900" />
@@ -124,10 +95,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="fixed bg-black border-black bg-opacity-100 backdrop-blur-xl top-0 z-50 h-max w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-md shadow-[#7b181da5]">
+    <nav className="fixed bg-black border-black bg-opacity-100 backdrop-blur-xl top-0 z-50 h-max w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 shadow-md shadow-[#7b181d00]">
       <div className="flex justify-between items-center text-white">
         <a href="/" className="text-2xl font-bold">
-          <img src="/logo.png" alt="Logo" className="h-10 w-auto ml-5" />
+          <img src="img/nav-logo.png" alt="Logo" className="h-10 w-auto ml-5" />
         </a>
         <div className="hidden lg:block">{navList}</div>
         <div className="lg:hidden">

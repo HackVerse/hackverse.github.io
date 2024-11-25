@@ -1,119 +1,115 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
+import { IconArrowRight } from '@tabler/icons-react';
 
-const buttonVariants = {
-  hover: { scale: 1.05, transition: { duration: 0.2 } },
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+const MarqueeText = () => {
+  const phrases = [
+    "REGISTRATION IS NOW OPEN",
+    "REGISTRATION IS NOW OPEN",
+    "REGISTRATION IS NOW OPEN",
+    "REGISTRATION IS NOW OPEN",
+    "REGISTRATION IS NOW OPEN"
+  ];
+
+  const combinedText = phrases.join(" • ");
+
+  const marqueeVariants = {
+    animate: {
+      x: [0, "-50%"],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 20,
+          ease: "linear",
+        },
+      },
+    },
+  };
+
+  return (
+    <div className="relative flex overflow-hidden whitespace-nowrap">
+      <div className="flex shrink-0">
+        <motion.div
+          className="flex shrink-0 items-center gap-4 text-black text-lg uppercase"
+          variants={marqueeVariants}
+          animate="animate"
+        >
+          <span className="shrink-0">{combinedText}</span>
+          <span className="shrink-0">{combinedText}</span>
+          <span className="shrink-0">{combinedText}</span>
+          <span className="shrink-0">{combinedText}</span>
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
 const LandingPage = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const textVariants = (delay) => ({
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay } },
-  });
-
-  const imageVariants = (delay) => ({
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, delay } },
-  });
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
-
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      style={{ background: "linear-gradient(180deg, #360202, #000)" }}
-      className="relative flex flex-col md:flex-row h-screen min-h-[660px] text-white overflow-hidden"
-    >
-      {/* Left Section */}
-      <div className="md:w-1/3 w-full flex flex-col justify-center items-start mt-24 md:mt-0 pl-8 md:pl-16 pr-4 md:pr-0 z-10">
+    <div className="relative h-[96vh] bg-cover bg-center text-white" style={{ backgroundImage: "url('/backgrounds/Landing-Bg.png')" }}>
+      {/* Infinite Scrolling Marquee */}
+      <div className="absolute top-2 md:top-5 w-full overflow-hidden bg-white py-2">
+        <MarqueeText />
+      </div>
+
+      {/* Main Content */}
+      <div className="flex flex-col justify-center items-center h-full mt-12">
+      <motion.p
+          className="text-2xl md:text-3xl mb-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          A NITK Original Hackathon
+        </motion.p>
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 whitespace-nowrap"
-          variants={textVariants(0.2)}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          //title
+          className="text-6xl md:text-8xl font-bold mb-8"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         >
-          <span>HACKVERSE </span>
-          <span className="bg-[#7B181D] px-4 pb-2">5.0</span>
-        </motion.h1>
+HACK <span className="bg-[#7B181D] text-4xl px-2 pb-2 pt-1 md:text-6xl md:px-4 md:pb-4 md:pt-2 inline-block transform -translate-y-[10px] md:-translate-y-4">5.0</span> VERSE
+</motion.h1>
 
-        <motion.p
-          className="text-2xl md:text-3xl text-[#ffffffaa] lg:text-4xl font-extralight mb-10 md:mb-[20vh] uppercase whitespace-nowrap"
-          variants={textVariants(0.3)}
-          //subtitle
-        >
-          24 hour hackathon @ NITK
-        </motion.p>
+        <motion.img
+          src="/img/bird_logo.png"
+          alt="Bird Logo"
+          className="w-64 h-auto mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
 
-        <motion.p
-          className="text-2xl text-[#ffffffaa] md:text-3xl lg:text-4xl font-extralight uppercase mb-8"
-          variants={textVariants(0.4)}
-          //date
-        >
-          Coming soon...
-        </motion.p>
-
-        {/* Buttons */}
-        <motion.div
-          className="flex text-lg md:text-xl gap-4"
-          variants={textVariants(0.5)}
-        >
-          <motion.button
-            className="px-8 py-2 whitespace-nowrap rounded-md bg-[#360E10] font-bold text-[#dadada] tracking-widest uppercase transform border-2 border-[#360E10] border-solid"
-            variants={buttonVariants}
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            onClick={() => window.open("https://hackverse-2023.devfolio.co/", "_blank")}
-          >
-            DEVFOLIO post
-          </motion.button>
-
-          <motion.button
-            className="px-8 py-2 rounded-md bg-[#dadada] font-bold text-[#360E10] tracking-widest uppercase transform border-2 border-[#360E10] border-solid"
-            variants={buttonVariants}
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            onClick={() => window.open("https://www.nitk.ac.in/How_To_Reach", "_blank")}
-          >
-            NITK
-          </motion.button>
-        </motion.div>
       </div>
 
-      {/* Right Section with Images */}
-      <div className="md:w-2/3 w-full h-full flex items-center justify-center mt-0 md:mt-10 relative">
-        {[
-          "backgrounds/bg-landing-1.png",
-          "backgrounds/bg-landing-2.png",
-          "backgrounds/bg-landing-3.png",
-          "backgrounds/bg-landing-4.png",
-        ].map((src, index) => (
-          <motion.img
-            key={src}
-            src={`/${src}`}
-            alt={`Background ${index + 1}`}
-            className="absolute max-w-[90%] max-h-[90vh] md:max-h-[80vh] w-auto h-auto object-contain z-0"
-            variants={imageVariants(index * 0.3)}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          />
-        ))}
-      </div>
-    </motion.div>
+{/* Floating Bottom Section */}
+<div className="absolute bottom-10 w-[90%] sm:w-[80%] left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row items-center justify-between bg-[#3d3d3d] bg-opacity-60 py-4 px-6 rounded-lg">
+  {/* Left Button - Sponsor Us */}
+  <motion.button
+    className="text-white uppercase text-xl font-bold tracking-wider hover:text-gray-300 flex items-center"
+    whileHover={{ scale: 1.05 }}
+  >
+    <IconArrowRight className="mr-2 w-6 h-6" /> {/* Arrow Icon */}
+    Sponsor Us
+  </motion.button>
+
+  {/* Center Text */}
+  <div className="text-center text-white text-sm md:text-lg uppercase tracking-wider my-4 sm:my-0 flex-1">
+    24-Hour Long Hackathon @ NITK, Surathkal – 11-12th January 2025
+  </div>
+
+  {/* Right Button - Apply Now */}
+  <motion.button
+    className="bg-red-600 text-white text-xl px-4 py-2 rounded-md font-bold uppercase tracking-wider hover:bg-red-700"
+    whileHover={{ scale: 1.05 }}
+  >
+    Apply Now!
+  </motion.button>
+</div>
+
+    </div>
   );
 };
 

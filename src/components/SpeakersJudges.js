@@ -1,6 +1,6 @@
 //to add add people go to ui/card-hover-effect.jsx
 
-import { HoverEffect } from "../../src/components/ui/card-hover-effect";
+//import { HoverEffect } from "../../src/components/ui/card-hover-effect";
 
 export function SpeakersJudges() {
   return (

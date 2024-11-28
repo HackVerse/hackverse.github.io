@@ -34,7 +34,7 @@ export const InfiniteMovingCards = ({
     >
       <img
         src={item.image}
-        alt={`testimonial-${idx + 1}`}
+        alt={`IMG_${idx + 1}`}
         className="rounded-xl w-full h-full object-cover"
       />
     </div>

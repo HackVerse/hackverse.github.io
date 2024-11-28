@@ -56,12 +56,25 @@ const StaticSVG = React.memo(() => (
   </svg>
 ));
 
-const ContentSection = React.memo(({ title, description }) => (
+const PrizeRow = ({ prize, medal, alt }) => (
+  <div className="flex items-center space-x-2 justify-end">
+    <img 
+      src={medal} 
+      alt={alt} 
+      className="w-12 h-12 md:w-20 md:h-20 translate-y-[6px] object-contain" 
+    />
+    <span className="text-2xl md:text-5xl font-semibold">{prize}</span>
+  </div>
+);
+
+const ContentSection = React.memo(({ title, description, children }) => (
   <div className="h-screen flex flex-col justify-center text-right md:mb-22">
-    <h2 className="inline-block text-4xl md:text-6xl px-4 pb-2 text-white font-bold">
+    <h2 className="inline-block text-4xl md:text-6xl px-0 pb-2 text-white font-bold self-end"> 
       <span className="bg-[#7B181D] px-4 pb-2">{title}</span>
     </h2>
-    <p className="text-2xl md:text-4xl whitespace-pre-line pt-16 md:pt-32">{description}</p>
+    <div className="text-2xl md:text-5xl whitespace-pre-line pt-16 md:pt-32 text-right">
+      {children || description}
+    </div>
   </div>
 ));
 
@@ -76,16 +89,47 @@ const StickyScrollSection = () => {
 
   const contentSections = useMemo(() => [
     {
-      title: "PRIZES",
-      description: "FIRST\n\nRUNNER UP\n\nSECOND RUNNER UP"
+      title: "MAIN PRIZES",
+      content: (
+        <div className="space-y-[10vh] md:space-y-[10vh]"> 
+          <PrizeRow 
+            prize="WINNER: ₹75,000" 
+            medal="/prizes/gold-medal.png" 
+            alt="Gold Medal" 
+          />
+          <PrizeRow 
+            prize="RUNNER UP: ₹50,000" 
+            medal="/prizes/silver-medal.png" 
+            alt="Silver Medal" 
+          />
+          <PrizeRow 
+            prize="SECOND RUNNER UP: ₹30,000" 
+            medal="/prizes/bronze-medal.png" 
+            alt="Bronze Medal" 
+          />
+        </div>
+      )
     },
     {
       title: "SPECIAL PRIZES",
-      description: "This is the description for the second section. More content to scroll through"
+      content: (
+        <div className="space-y-[10vh] md:space-y-[10vh]"> 
+          <PrizeRow 
+            prize="BEST WOMEN TEAM: ₹10,000" 
+            medal="/prizes/women-icon.png" 
+            alt="Women's Prize" 
+          />
+          <PrizeRow 
+            prize="BEST DESIGN: ₹10,000" 
+            medal="/prizes/creative-icon.png" 
+            alt="Design Prize" 
+          />
+        </div>
+      )
     },
     {
-      title: "PARTICIPATION PRIZES",
-      description: "This is the description for the third section. Keep adding as much text as needed"
+      title: "TRACK PRIZES",
+      description: "BEST TRACK PRIZES for Each Track\n\n₹10,000 per Track"
     }
   ], []);
 
@@ -153,7 +197,6 @@ const StickyScrollSection = () => {
 
   return (
     <div ref={sectionRef} className="flex h-[310vh] bg-[#080808] text-white relative">
-      {/* Dot background with radial fade */}
       <div
         className="absolute inset-0 w-full h-full hidden md:block"
         style={{
@@ -163,7 +206,6 @@ const StickyScrollSection = () => {
         }}
       />
       
-      {/* Mobile dot background */}
       <div
         className="absolute inset-0 w-full h-full md:hidden"
         style={{
@@ -173,7 +215,6 @@ const StickyScrollSection = () => {
         }}
       />
 
-      {/* extra radial fade for the black background */}
       <div
         className="absolute inset-0 w-full h-full bg-[#080808]"
         style={{
@@ -184,7 +225,7 @@ const StickyScrollSection = () => {
       />
 
       <div 
-        className="w-full md:w-1/3 md:relative flex items-center justify-center h-screen transform-gpu"
+        className="w-full md:w-2/5 md:relative flex items-center justify-center h-screen transform-gpu"
         style={{
           position: stickyPosition,
           top: stickyPosition === 'fixed' ? '50%' : '0',
@@ -192,28 +233,26 @@ const StickyScrollSection = () => {
           left: '0',
         }}
       >
-        {/* Layer 1: Static SVG */}
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
           <StaticSVG />
         </div>
         
-        {/* Layer 2: Rotating SVG */}
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
           <RotatingSVG rotation={rotation} />
         </div>
         
-        {/* Layer 3: Black overlay (mobile only) */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 md:hidden" />
       </div>
 
-      {/* Layer 4: Content */}
-      <div className="w-full md:w-2/3 md:relative ml-auto px-4 md:px-8 py-16 relative z-10">
+      <div className="w-full mr-8 md:w-3/5 md:relative ml-auto px-4 md:px-8 py-16 relative z-10">
         {contentSections.map((section, index) => (
           <ContentSection
             key={index}
             title={section.title}
             description={section.description}
-          />
+          >
+            {section.content}
+          </ContentSection>
         ))}
       </div>
     </div>

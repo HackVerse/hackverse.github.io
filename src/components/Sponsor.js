@@ -189,35 +189,35 @@ const Sponsor = () => {
 
         {/* Sponsor Info*/}
         <div className="flex flex-wrap justify-center items-center">
-          <a href="https://www.esamudaay.com/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/eSamudaay.webp" className="w-40 hover:scale-105 transition-transform" alt="eSamudaay" />
+          <a href="https://aptos.dev" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/Aptos_Primary_WHT.png" className="w-40 hover:scale-105 transition-transform" alt="Aptos" />
           </a>
-          <a href="https://ondc.org/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/ONDC.webp" className="w-40 hover:scale-105 transition-transform" alt="ONDC" />
+          <a href="https://balsamiq.com" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/balsamiq-logo.png" className="w-40 hover:scale-105 transition-transform" alt="Balsamiq" />
           </a>
-          <a href="https://zolve.com/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/zolve_logo.webp" className="w-28 hover:scale-105 transition-transform" alt="Zolve" />
+          <a href="https://ethindia.co" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/ETHIndia.png" className="w-28 hover:scale-105 transition-transform" alt="ETHIndia" />
           </a>
-          <a href="https://devfolio.co/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/Devfolio_Logo-Colored.webp" className="w-40 hover:scale-105 transition-transform" alt="Devfolio" />
+          <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/Devfolio - White.png" className="w-40 hover:scale-105 transition-transform" alt="Devfolio" />
           </a>
-          <a href="https://polygon.technology/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/Polygon_Logo-Colored.webp" className="w-36 hover:scale-105 transition-transform" alt="Polygon" />
+          <a href="https://polygon.technology" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/Polygon_Primary_Light.png" className="w-36 hover:scale-105 transition-transform" alt="Polygon" />
           </a>
-          <a href="https://1by0grit.com/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/1by0grit.webp" className="w-36 hover:scale-105 transition-transform" alt="1by0grit" />
+          <a href="https://interviewbuddy.net/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/g30.png" className="w-36 hover:scale-105 transition-transform" alt="interviewbuddy" />
           </a>
-          <a href="https://www.digitalocean.com/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/Digital_Ocean_logo.webp" className="w-36 hover:scale-105 transition-transform" alt="Digital Ocean" />
+          <a href="https://orkes.io" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/orkes logo.jpeg" className="w-36 hover:scale-105 transition-transform" alt="Orkes" />
           </a>
-          <a href="https://solana.com" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/Solana-Colored.webp" className="w-36 hover:scale-105 transition-transform" alt="Solana" />
+          <a href="https://plotch.ai" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/plotch_logo-3.png" className="w-36 hover:scale-105 transition-transform" alt="Plotch" />
           </a>
-          <a href="https://filecoin.io/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/Filecoin Coloured White Text.webp" className="w-36 hover:scale-105 transition-transform" alt="Filecoin" />
+          <a href="https://www.redbull.com" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/red-bull-logo.png" className="w-36 hover:scale-105 transition-transform" alt="Red Bull" />
           </a>
-          <a href="https://replit.com" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./img/Replit-light-background.webp" className="w-36 hover:scale-105 transition-transform" alt="Replit" />
+          <a href="https://gen.xyz/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
+            <img src="./sponsor/xyz-logo-white.png" className="w-36 hover:scale-105 transition-transform" alt="XYZ" />
           </a>
         </div>
       </div>

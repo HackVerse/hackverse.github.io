@@ -190,8 +190,8 @@ StatItem.displayName = 'StatItem';
 
 export default function StatsSection() {
   const testimonials = useCallback(() => 
-    Array.from({ length: 6 }).map((_, index) => ({
-      image: `/testimonials/testimonial-${index + 1}.webp`,
+    Array.from({ length: 11 }).map((_, index) => ({
+      image: `/gallery/IMG_${index + 1}.JPG`,
     })), 
   []);
 

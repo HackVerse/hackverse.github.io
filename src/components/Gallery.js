@@ -23,7 +23,7 @@ const generateCards = () => {
   let currentImageIndex = 1;
 
   const createCard = (span) => {
-    if (currentImageIndex <= 42) //change 42 to last image number
+    if (currentImageIndex <= 11) //change 42 to last image number
     {
       cards.push({
         id: currentImageIndex,
@@ -34,7 +34,7 @@ const generateCards = () => {
     }
   };
 
-  while (currentImageIndex <= 42) //change 42 to last image number
+  while (currentImageIndex <= 11) //change 42 to last image number
     {
     const pattern = ROW_PATTERNS[Math.floor(Math.random() * ROW_PATTERNS.length)];
 

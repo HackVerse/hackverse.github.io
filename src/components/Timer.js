@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 function Timer() {
   const [time, setTime] = useState({
@@ -8,6 +8,9 @@ function Timer() {
     minutes: 0,
     seconds: 0,
   });
+
+  const timerRef = useRef(null);
+  const isTimerInView = useInView(timerRef, { triggerOnce: true });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,16 +33,22 @@ function Timer() {
     return () => clearInterval(interval);
   }, []);
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut' } },
+  };
+
   return (
     <div
-      className="w-full h-56 flex flex-col items-center justify-center"
-      style={{ background: "linear-gradient(180deg, #360202, #000)" }}  // Gradient background added here
+      className="w-full h-56 flex flex-col items-center justify-end"
+      style={{ background: "linear-gradient(180deg, #360202, #000)" }}
     >
       {/* "Registration Ends In" Label */}
       <motion.div
         className="text-white text-2xl sm:text-3xl font-bold mb-4 uppercase"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial="hidden"
+        animate={isTimerInView ? "visible" : "hidden"}
+        variants={fadeIn}
         transition={{ duration: 2, ease: "easeOut" }}
       >
         Registration Ends In
@@ -47,9 +56,11 @@ function Timer() {
 
       {/* Timer Container */}
       <motion.div
+        ref={timerRef}
         className="bg-[#3d3d3d] bg-opacity-30 text-white p-6 rounded-lg shadow-lg flex gap-8 w-3/4 sm:w-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial="hidden"
+        animate={isTimerInView ? "visible" : "hidden"}
+        variants={fadeIn}
         transition={{ duration: 2, ease: "easeOut" }}
       >
         <div className="flex flex-col items-center">

@@ -1,168 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
- /* Repeating Background Text */
+ const BackgroundText = React.memo(() => {
+  const repeatText = 'sponsors';
+  
+  const alignmentVariations = [
+    `&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+    `&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+    `&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`
+  ];
 
-const BackgroundText = React.memo(() => {
-    return (
-      <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36 ">
+  return (
+    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36">
+      {[...Array(24)].map((_, index) => (
         <motion.div
+          key={index}
           className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
+          style={{ 
+            WebkitTextStroke: index === 1 || index === 15 ? '1px' : '0px red'
+          }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 0.6, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "1px " }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.05 }}
-        >
-          &nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-        >
-          &nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.25 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-        >
-          &nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.35 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.45 }}
-        >
-          &nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.55 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-        >
-          &nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.65 }}
-        >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-        <motion.div
-          className="text-[96px] whitespace-nowrap font-black tracking-widest"
-          style={{ WebkitTextStroke: "0px red" }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
-        >
-          &nbsp;&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors&nbsp;&nbsp;sponsors
-        </motion.div>
-      </div>
-    );
-  });
-  
-  
-  
-  BackgroundText.displayName = 'BackgroundText';
+          transition={{ 
+            duration: 1, 
+            ease: "easeOut", 
+            delay: index * 0.05 
+          }}
+          dangerouslySetInnerHTML={{
+            __html: alignmentVariations[index % alignmentVariations.length]
+          }}
+        />
+      ))}
+    </div>
+  );
+});
+
+BackgroundText.displayName = 'BackgroundText';
 
 const Sponsor = () => {
   return (
@@ -171,7 +46,7 @@ const Sponsor = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center container mx-auto"  id="sponsor">
-        <h1 className="text-center text-4xl md:text-6xl font-extrabold mb-10 text-[#ffffff]"><span className="bg-[#7B181D] px-4 pb-2">SPONSORS</span></h1>
+        <h1 className="text-center text-4xl md:text-6xl font-extrabold mb-10 text-[#ffffff]">OUR <span className="bg-[#7B181D] px-4 pb-2">SPONSORS</span></h1>
       {/* Desc */}
         <p className="text-center text-white mb-6">
           <strong>Interested in sponsoring?</strong> Contact us at{' '}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
+import Timer from "./components/Timer";
 import About from "./components/About";
 import "./index.css";
 import StatsSection from "./components/StatsSection";
@@ -42,6 +43,9 @@ function MainPage() {
     <div className="overflow-x-hidden">
       <div id="home">
         <Landing />
+      </div>
+      <div>
+        <Timer />
       </div>
       <div id="about">
         <About />

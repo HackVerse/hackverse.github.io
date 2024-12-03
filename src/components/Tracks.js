@@ -25,25 +25,26 @@ export function CanvasRevealEffectDemo() {
           backgroundImage: `url('backgrounds/bg_prof_mobile.jpg')`,
         }}
       ></div>
-  
+
       {/* Title */}
       <div className="relative flex justify-center items-start pt-8 md:pt-20 z-20 w-full">
         <h1 className="text-[#ffffff] text-3xl md:text-6xl font-bold whitespace-nowrap">
           CHOOSE YOUR <span className="bg-[#7B181D] px-4 pb-2">HEIST</span>
         </h1>
       </div>
-  
+
       {/* Cards */}
       <div className="relative flex items-center justify-start min-h-screen pt-20 md:pt-0 pb-20">
         <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-10 px-4 md:px-8 z-20 justify-items-center">
-          
           {cardData.map((card, index) => (
             <Card
               key={index}
               title={card.title}
               number={card.number}
               description={card.description}
-              icon={card.icon}
+              // Conditionally pass image if it exists, else pass icon
+              image={card.image ? card.image : undefined}  // Pass image if it exists
+              icon={!card.image ? card.icon : undefined}    // Pass icon if image does not exist
             >
               <CanvasRevealEffect
                 animationSpeed={3}
@@ -52,17 +53,16 @@ export function CanvasRevealEffectDemo() {
               />
             </Card>
           ))}
-          
         </div>
       </div>
     </div>
   );
-  
 }
 
 
 
-const Card = ({ title, description, number, icon, children }) => {
+
+const Card = ({ title, description, number, icon, image, children }) => {
   const [hovered, setHovered] = React.useState(false);
 
   // Detect if the device is touch-enabled
@@ -107,13 +107,17 @@ const Card = ({ title, description, number, icon, children }) => {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-between h-full w-full">
-        {/* Icon (Visible by default, disappears and moves up when hovered) */}
+        {/* Icon or Image (Visible by default, disappears and moves up when hovered) */}
         <div
           className={`text-center absolute top-1/2 transform -translate-y-1/2 w-full flex items-center justify-center 
             ${hovered ? 'opacity-0 -translate-y-3' : 'opacity-100 translate-y-0'} 
             transition-all duration-300`}
         >
-          {icon}
+          {image ? (
+            <img src={image} alt="Card Image" className="h-10 w-10 md:h-14 md:w-14" />
+          ) : (
+            icon
+          )}
         </div>
 
         {/* Title (Appears when hovered) */}

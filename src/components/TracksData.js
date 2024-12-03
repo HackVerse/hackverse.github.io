@@ -410,16 +410,8 @@ const cardData = [
     number: "₹10,965",
     description:
       "Ensuring the protection of data and privacy in today's digital world.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-      >
-        <path d="M12 2L2 12h3v8h14v-8h3L12 2z" fill="#FFF" />
-      </svg>
-    ),
+    icon: "",
+    image: "/svgs/security-icon-tracks.png"
   },
   {
     title: "The Green Vault: Environment & Energy Conservation",

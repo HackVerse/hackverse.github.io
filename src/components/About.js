@@ -83,7 +83,7 @@ export default function About() {
           initial="hidden"
           animate={isTitleInView ? "visible" : "hidden"}
           variants={fadeIn}
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff] mt-10"
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-center md:text-left uppercase text-[#ffffff] mt-5 md:mt-0"
           style={{ lineHeight: "1.5" }} //Title
         >
           Unleash the power of innovation in the vaults of HackVerse, <span className="bg-[#7B181D] px-4 whitespace-nowrap pb-2">where the heist meets technology</span>

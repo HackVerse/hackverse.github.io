@@ -12,7 +12,7 @@ function Timer() {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-      const targetDate = new Date('2025-01-11T14:00:00');
+      const targetDate = new Date('2024-12-27T00:00:00');
       const timeDiff = targetDate - now;
 
       if (timeDiff <= 0) {
@@ -31,30 +31,42 @@ function Timer() {
   }, []);
 
   return (
-    <div className="w-full h-44 flex items-center justify-center bg-gray-100">
-      {/* Timer Container Fade-In Animation with Increased Duration */}
+    <div
+      className="w-full h-56 flex flex-col items-center justify-center"
+      style={{ background: "linear-gradient(180deg, #360202, #000)" }}  // Gradient background added here
+    >
+      {/* "Registration Ends In" Label */}
       <motion.div
-        className="bg-gray-800 text-white p-6 rounded-lg shadow-lg flex gap-8 w-3/4 sm:w-auto"
+        className="text-white text-2xl sm:text-3xl font-bold mb-4 uppercase"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+      >
+        Registration Ends In
+      </motion.div>
+
+      {/* Timer Container */}
+      <motion.div
+        className="bg-[#3d3d3d] bg-opacity-30 text-white p-6 rounded-lg shadow-lg flex gap-8 w-3/4 sm:w-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
       >
         <div className="flex flex-col items-center">
-          {/* Value Animation: Smooth transition with opacity and vertical movement */}
           <motion.div
-            className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-extrabold" // Adjusted to 4xl for larger screens
-            key={time.days} // Trigger reanimation on value change
+            className="text-3xl sm:text-4xl font-extrabold"
+            key={time.days}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           >
             {time.days}
           </motion.div>
-          <span className="text-base sm:text-lg md:text-xl lg:text-xl">Days</span>
+          <span className="text-base mt-1 font-bold text-[#a02026] uppercase sm:text-lg">Days</span>
         </div>
         <div className="flex flex-col items-center">
           <motion.div
-            className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-extrabold" // Adjusted to 4xl for larger screens
+            className="text-3xl sm:text-4xl font-extrabold"
             key={time.hours}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,11 +74,11 @@ function Timer() {
           >
             {time.hours}
           </motion.div>
-          <span className="text-base sm:text-lg md:text-xl lg:text-xl">Hours</span>
+          <span className="text-base font-bold mt-1 text-[#a02026] uppercase sm:text-lg">Hours</span>
         </div>
         <div className="flex flex-col items-center">
           <motion.div
-            className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-extrabold" // Adjusted to 4xl for larger screens
+            className="text-3xl sm:text-4xl font-extrabold"
             key={time.minutes}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,11 +86,11 @@ function Timer() {
           >
             {time.minutes}
           </motion.div>
-          <span className="text-base sm:text-lg md:text-xl lg:text-xl">Minutes</span>
+          <span className="text-base font-bold mt-1 text-[#a02026] uppercase sm:text-lg">Minutes</span>
         </div>
         <div className="flex flex-col items-center">
           <motion.div
-            className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-extrabold" // Adjusted to 4xl for larger screens
+            className="text-3xl sm:text-4xl font-extrabold"
             key={time.seconds}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +98,7 @@ function Timer() {
           >
             {time.seconds}
           </motion.div>
-          <span className="text-base sm:text-lg md:text-xl lg:text-xl">Seconds</span>
+          <span className="text-base font-bold mt-1 text-[#a02026] uppercase sm:text-lg">Seconds</span>
         </div>
       </motion.div>
     </div>

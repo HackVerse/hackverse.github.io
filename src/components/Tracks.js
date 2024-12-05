@@ -9,7 +9,7 @@ export function CanvasRevealEffectDemo() {
       title: "The Knowledge Exchange: EdTech",
       description: "Revolutionise education through sustainability-focused tools and resources.",
       prize: "₹10,000",
-      icon: "/tracks/Edtech.png"
+      icon: "/tracks/EdTech.png"
     },
     {
       title: "The Vital Vault: HealthCare", 

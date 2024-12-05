@@ -95,7 +95,7 @@ export default function StatsSection() {
   const testimonials = useCallback(
     () =>
       Array.from({ length: 11 }).map((_, index) => ({
-        image: `/gallery/IMG_${index + 1}.JPG`,
+        image: `/gallery/IMG_${index + 1}.jpg`,
       })),
     []
   );

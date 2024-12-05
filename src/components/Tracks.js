@@ -95,7 +95,7 @@ return (
     <div
       className="absolute inset-0 z-10 bg-cover bg-right bg-fixed hidden md:block"
       style={{
-        backgroundImage: `url('backgrounds/bg_prof.JPG')`,
+        backgroundImage: `url('backgrounds/bg_prof.jpg')`,
       }}
     ></div>
 

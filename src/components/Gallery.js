@@ -28,7 +28,7 @@ const generateCards = () => {
       cards.push({
         id: currentImageIndex,
         className: `h-96 md:col-span-${span}`,
-        thumbnail: `/gallery/IMG_${currentImageIndex}.JPG`
+        thumbnail: `/gallery/IMG_${currentImageIndex}.jpg`
       });
       currentImageIndex++;
     }

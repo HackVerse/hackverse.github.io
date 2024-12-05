@@ -2,7 +2,7 @@
   "name": "hackverse",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hackverse.github.io/hackverse5",
+  "homepage": "https://hackverse.github.io/",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@react-three/fiber": "^8.17.10",

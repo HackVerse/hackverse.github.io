@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/hackverse5.github.io/static/css/main.7f308769.css",
-    "main.js": "/hackverse5.github.io/static/js/main.4c8859aa.js",
-    "index.html": "/hackverse5.github.io/index.html",
-    "main.7f308769.css.map": "/hackverse5.github.io/static/css/main.7f308769.css.map",
-    "main.4c8859aa.js.map": "/hackverse5.github.io/static/js/main.4c8859aa.js.map"
+    "main.css": "/hackverse5/static/css/main.7f308769.css",
+    "main.js": "/hackverse5/static/js/main.4c8859aa.js",
+    "index.html": "/hackverse5/index.html",
+    "main.7f308769.css.map": "/hackverse5/static/css/main.7f308769.css.map",
+    "main.4c8859aa.js.map": "/hackverse5/static/js/main.4c8859aa.js.map"
   },
   "entrypoints": [
     "static/css/main.7f308769.css",

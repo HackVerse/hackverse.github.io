@@ -48,7 +48,7 @@ const Footer = () => {
               </a>
               <a href="https://discord.gg/HnmH7fGK" target="_blank" rel="noopener noreferrer" aria-label="Discord">
                 <div className="bg-black w-full flex justify-center py-10">
-                  <img src="img/discord_footer_icons.png" alt="Discord" className="w-8 opacity-70 hover:opacity-100 rounded-full" />
+                  <img src="img/discord.svg" alt="Discord" className="w-8 opacity-70 hover:opacity-100 rounded-full" />
                 </div>
               </a>
               <a href="http://linkedin.com/company/hackverse" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

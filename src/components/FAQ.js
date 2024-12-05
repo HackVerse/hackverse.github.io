@@ -1,4 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
+import { motion, useAnimation, useInView } from "framer-motion"
+import { useEffect, useRef } from "react"
 
 const FAQ = () => {
   const faqs = [
@@ -64,61 +66,141 @@ const FAQ = () => {
     }
   ];
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    } else {
+      mainControls.start("hidden");
+    }
+  }, [isInView, mainControls]);
+
   const midpoint = Math.ceil(faqs.length / 2);
   const leftColumnFaqs = faqs.slice(0, midpoint);
   const rightColumnFaqs = faqs.slice(midpoint);
 
-  return (
-    <div className="min-h-screen bg-black py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-      <h1 className="text-4xl md:text-6xl font-bold text-white text-center mb-16">
-  <span className="leading-normal block mb-2">CLEAR YOUR DOUBTS FOR THE HEIST </span>
-  <span className="bg-[#7B181D] px-4 pb-2 inline-block">EXPLORE OUR FAQS</span>
-</h1>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-8">
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+    <div 
+      ref={ref}
+      className="min-h-screen bg-black py-16 px-4 md:px-8"
+    >
+      <div className="max-w-7xl mx-auto">
+        <motion.h1 
+          variants={containerVariants}
+          initial="hidden"
+          animate={mainControls}
+          className="text-4xl md:text-6xl font-bold text-white text-center mb-16"
+        >
+          <motion.span 
+            variants={itemVariants}
+            className="leading-normal block mb-2"
+          >
+            CLEAR YOUR DOUBTS FOR THE HEIST 
+          </motion.span>
+          <motion.span 
+            variants={itemVariants}
+            className="bg-[#7B181D] px-4 pb-2 inline-block"
+          >
+            EXPLORE OUR FAQS
+          </motion.span>
+        </motion.h1>
+
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate={mainControls}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-8"
+        >
           {/* Left Column */}
-          <div className="space-y-6">
+          <motion.div 
+            variants={containerVariants}
+            className="space-y-6"
+          >
             <Accordion type="single" collapsible className="w-full">
-              {leftColumnFaqs.map((faq) => (
-                <AccordionItem
+              {leftColumnFaqs.map((faq, index) => (
+                <motion.div
                   key={faq.value}
-                  value={faq.value}
-                  className="border border-red-600/40 px-4 mb-5 "
+                  variants={itemVariants}
                 >
-                  <AccordionTrigger className="text-lg md:text-xl text-white hover:text-red-500 hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base md:text-lg text-gray-400">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem
+                    value={faq.value}
+                    className="border border-red-600/40 px-4 mb-5"
+                  >
+                    <AccordionTrigger className="text-lg md:text-xl text-white hover:text-red-500 hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base md:text-lg text-gray-400">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
               ))}
             </Accordion>
-          </div>
+          </motion.div>
 
           {/* Right Column */}
-          <div className="space-y-6">
+          <motion.div 
+            variants={containerVariants}
+            className="space-y-6"
+          >
             <Accordion type="single" collapsible className="w-full">
-              {rightColumnFaqs.map((faq) => (
-                <AccordionItem
+              {rightColumnFaqs.map((faq, index) => (
+                <motion.div
                   key={faq.value}
-                  value={faq.value}
-                  className="border border-red-600/40 px-4 mb-5 "
+                  variants={itemVariants}
                 >
-                  <AccordionTrigger className="text-lg md:text-xl text-white hover:text-red-500 hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base md:text-lg text-gray-400">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem
+                    value={faq.value}
+                    className="border border-red-600/40 px-4 mb-5"
+                  >
+                    <AccordionTrigger className="text-lg md:text-xl text-white hover:text-red-500 hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-base md:text-lg text-gray-400">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
               ))}
             </Accordion>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="text-center mt-16">
+        <motion.div 
+          variants={itemVariants}
+          initial="hidden"
+          animate={mainControls}
+          className="text-center mt-16"
+        >
           <p className="text-lg md:text-xl text-gray-400">
             Still got questions?{' '}
             <a 
@@ -130,7 +212,7 @@ const FAQ = () => {
               Join our Telegram Channel
             </a>
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

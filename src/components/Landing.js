@@ -100,7 +100,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="relative h-[96vh] bg-cover bg-center text-white" style={{ backgroundImage: "url('/backgrounds/Landing-Bg.png')" }}>
+    <div className="relative h-dvh md:h-[96vh] bg-cover bg-center text-white" style={{ backgroundImage: "url('/backgrounds/Landing-Bg.png')" }}>
       {/* Infinite Scrolling Marquee */}
       <div className="absolute top-2 md:top-5 w-full overflow-hidden bg-white py-2">
         <MarqueeText />
@@ -131,7 +131,7 @@ const LandingPage = () => {
           ref={logoRef}
           src="/img/bird_logo.png"
           alt="Bird Logo"
-          className="w-64 h-auto mb-8"
+          className="w-64 h-auto mb-32 md:mb-8"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}

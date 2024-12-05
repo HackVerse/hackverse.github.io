@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
- const BackgroundText = React.memo(() => {
+const BackgroundText = React.memo(() => {
   const repeatText = 'sponsors';
   
   const alignmentVariations = [
@@ -21,8 +21,8 @@ import { motion } from 'framer-motion';
             WebkitTextStroke: index === 1 || index === 15 ? '1px' : '0px red'
           }}
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
+          whileInView={{ opacity: 0.3, y: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
           transition={{ 
             duration: 1, 
             ease: "easeOut", 
@@ -39,15 +39,81 @@ import { motion } from 'framer-motion';
 
 BackgroundText.displayName = 'BackgroundText';
 
+const sponsors = [
+  { 
+    name: "Aptos", 
+    logo: "./sponsor/Aptos_Primary_WHT.png", 
+    link: "https://aptos.dev",
+    width: "w-52"
+  },
+  { 
+    name: "Balsamiq", 
+    logo: "./sponsor/balsamiq-logo.png", 
+    link: "https://balsamiq.com",
+    width: "w-52"
+  },
+  { 
+    name: "ETHIndia", 
+    logo: "./sponsor/ETHIndia.png", 
+    link: "https://ethindia.co",
+    width: "w-52"
+  },
+  { 
+    name: "Devfolio", 
+    logo: "./sponsor/Devfolio - White.png", 
+    link: "https://devfolio.co",
+    width: "w-52"
+  },
+  { 
+    name: "Polygon", 
+    logo: "./sponsor/Polygon_Primary_Light.png", 
+    link: "https://polygon.technology",
+    width: "w-52"
+  },
+  { 
+    name: "InterviewBuddy", 
+    logo: "./sponsor/g30.png", 
+    link: "https://interviewbuddy.net/",
+    width: "w-52"
+  },
+  { 
+    name: "Orkes", 
+    logo: "./sponsor/orkes logo.jpeg", 
+    link: "https://orkes.io",
+    width: "w-52"
+  },
+  { 
+    name: "Plotch", 
+    logo: "./sponsor/plotch_logo-3.png", 
+    link: "https://plotch.ai",
+    width: "w-52"
+  },
+  { 
+    name: "Red Bull", 
+    logo: "./sponsor/red-bull-logo.png", 
+    link: "https://www.redbull.com",
+    width: "w-52"
+  },
+  { 
+    name: "XYZ", 
+    logo: "./sponsor/xyz-logo-white.png", 
+    link: "https://gen.xyz/",
+    width: "w-44"
+  }
+];
+
 const Sponsor = () => {
   return (
     <section id="sponsors" className="relative bg-black min-h-screen flex flex-col items-center justify-center px-8 py-20 text-[#5c5c5c]">
       <BackgroundText />
 
       {/* Content */}
-      <div className="relative z-10 text-center container mx-auto"  id="sponsor">
-        <h1 className="text-center text-4xl md:text-6xl font-extrabold mb-10 text-[#ffffff]">OUR <span className="bg-[#7B181D] px-4 pb-2">SPONSORS</span></h1>
-      {/* Desc */}
+      <div className="relative z-10 text-center container mx-auto" id="sponsor">
+        <h1 className="text-center text-4xl md:text-6xl font-extrabold mb-10 text-[#ffffff]">
+          OUR <span className="bg-[#7B181D] px-4 pb-2">SPONSORS</span>
+        </h1>
+
+        {/* Desc */}
         <p className="text-center text-white mb-6">
           <strong>Interested in sponsoring?</strong> Contact us at{' '}
           <a
@@ -62,38 +128,34 @@ const Sponsor = () => {
           and break through the snow barrier to shape the future of tech!
         </p>
 
-        {/* Sponsor Info*/}
+        {/* Sponsor Logos */}
         <div className="flex flex-wrap justify-center items-center">
-          <a href="https://aptos.dev" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/Aptos_Primary_WHT.png" className="w-40 hover:scale-105 transition-transform" alt="Aptos" />
-          </a>
-          <a href="https://balsamiq.com" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/balsamiq-logo.png" className="w-40 hover:scale-105 transition-transform" alt="Balsamiq" />
-          </a>
-          <a href="https://ethindia.co" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/ETHIndia.png" className="w-28 hover:scale-105 transition-transform" alt="ETHIndia" />
-          </a>
-          <a href="https://devfolio.co" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/Devfolio - White.png" className="w-40 hover:scale-105 transition-transform" alt="Devfolio" />
-          </a>
-          <a href="https://polygon.technology" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/Polygon_Primary_Light.png" className="w-36 hover:scale-105 transition-transform" alt="Polygon" />
-          </a>
-          <a href="https://interviewbuddy.net/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/g30.png" className="w-36 hover:scale-105 transition-transform" alt="interviewbuddy" />
-          </a>
-          <a href="https://orkes.io" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/orkes logo.jpeg" className="w-36 hover:scale-105 transition-transform" alt="Orkes" />
-          </a>
-          <a href="https://plotch.ai" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/plotch_logo-3.png" className="w-36 hover:scale-105 transition-transform" alt="Plotch" />
-          </a>
-          <a href="https://www.redbull.com" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/red-bull-logo.png" className="w-36 hover:scale-105 transition-transform" alt="Red Bull" />
-          </a>
-          <a href="https://gen.xyz/" target="_blank" rel="noopener noreferrer" className="m-6 p-6">
-            <img src="./sponsor/xyz-logo-white.png" className="w-36 hover:scale-105 transition-transform" alt="XYZ" />
-          </a>
+          {sponsors.map((sponsor, index) => (
+            <motion.a
+              key={sponsor.name}
+              href={sponsor.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`m-6 p-6 ${sponsor.width}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ 
+                opacity: 1, 
+                scale: 1,
+                transition: {
+                  duration: 0.5,
+                  ease: "easeOut"
+                }
+              }}
+              viewport={{ once: false, amount: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img 
+                src={sponsor.logo} 
+                className={`${sponsor.width} hover:scale-105 transition-transform`} 
+                alt={sponsor.name} 
+              />
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>

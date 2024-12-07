@@ -44,73 +44,85 @@ const sponsors = [
     name: "Aptos", 
     logo: "./sponsor/Aptos_Primary_WHT.png", 
     link: "https://aptos.dev",
-    width: "w-52"
+    width: "w-52",
+    altText: "Aptos Blockchain Logo"
   },
   { 
     name: "Balsamiq", 
     logo: "./sponsor/balsamiq-logo.png", 
     link: "https://balsamiq.com",
-    width: "w-52"
+    width: "w-52",
+    altText: "Balsamiq Logo"
   },
   { 
     name: "ETHIndia", 
     logo: "./sponsor/ETHIndia.png", 
     link: "https://ethindia.co",
-    width: "w-52"
+    width: "w-52",
+    altText: "ETHIndia Logo"
   },
   { 
     name: "Devfolio", 
     logo: "./sponsor/Devfolio - White.png", 
     link: "https://devfolio.co",
-    width: "w-52"
+    width: "w-52",
+    altText: "Devfolio Logo"
   },
   { 
     name: "Polygon", 
     logo: "./sponsor/Polygon_Primary_Light.png", 
     link: "https://polygon.technology",
-    width: "w-52"
+    width: "w-52",
+    altText: "Polygon Logo"
   },
   { 
     name: "InterviewBuddy", 
     logo: "./sponsor/g30.png", 
     link: "https://interviewbuddy.net/",
-    width: "w-52"
+    width: "w-52",
+    altText: "InterviewBuddy Logo"
   },
   { 
     name: "Orkes", 
     logo: "./sponsor/orkes logo.jpeg", 
     link: "https://orkes.io",
-    width: "w-52"
+    width: "w-52",
+    altText: "Orkes Logo"
   },
   { 
     name: "Plotch", 
     logo: "./sponsor/plotch_logo-3.png", 
     link: "https://plotch.ai",
-    width: "w-52"
+    width: "w-52",
+    altText: "Plotch Logo"
   },
   { 
     name: "XYZ", 
     logo: "./sponsor/xyz-logo-white.png", 
     link: "https://gen.xyz/",
-    width: "w-44"
+    width: "w-44",
+    altText: "XYZ Domains Logo"
   },
   { 
     name: "Give My Certificate", 
     logo: "./sponsor/gmc.png", 
-    link: "https://gen.xyz/",
-    width: "w-64"
+    link: "https://givemycertificate.com/",
+    width: "w-64",
+    altText: "Give My Certificate Logo"
   },
   { 
     name: "Red Bull", 
     logo: "./sponsor/red-bull-logo.png", 
     link: "https://www.redbull.com",
-    width: "w-56"
+    width: "w-56",
+    altText: "Red Bull Logo"
   },
   { 
     name: "The Global Hues", 
     logo: "./sponsor/TGH.png", 
-    link: "https://gen.xyz/",
-    width: "w-52"
+    link: "https://theglobalhues.com/",
+    width: "w-52",
+    altText: "The Global Hues Logo"
   }
 ];
 
@@ -164,7 +176,7 @@ const Sponsor = () => {
               <img 
                 src={sponsor.logo} 
                 className={`${sponsor.width} hover:scale-105 transition-transform`} 
-                alt={sponsor.name} 
+                alt={sponsor.altText} 
               />
             </motion.a>
           ))}

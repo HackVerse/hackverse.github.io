@@ -4,9 +4,9 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 /* Stats Content */
 const STATS_DATA = [
-  { number: "1500+", label: "Total Registrations" },
-  { number: "400+", label: "Hackers Hosted" },
-  { number: "140+", label: "Engineering Institutes" },
+  { number: "3000+", label: "Total Registrations" },
+  { number: "500+", label: "Hackers Hosted" },
+  { number: "150+", label: "Engineering Institutes" },
 ];
 
 /* Repeating Background Text */

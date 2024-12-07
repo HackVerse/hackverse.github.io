@@ -89,16 +89,28 @@ const sponsors = [
     width: "w-52"
   },
   { 
-    name: "Red Bull", 
-    logo: "./sponsor/red-bull-logo.png", 
-    link: "https://www.redbull.com",
-    width: "w-52"
-  },
-  { 
     name: "XYZ", 
     logo: "./sponsor/xyz-logo-white.png", 
     link: "https://gen.xyz/",
     width: "w-44"
+  },
+  { 
+    name: "Give My Certificate", 
+    logo: "./sponsor/gmc.png", 
+    link: "https://gen.xyz/",
+    width: "w-64"
+  },
+  { 
+    name: "Red Bull", 
+    logo: "./sponsor/red-bull-logo.png", 
+    link: "https://www.redbull.com",
+    width: "w-56"
+  },
+  { 
+    name: "The Global Hues", 
+    logo: "./sponsor/TGH.png", 
+    link: "https://gen.xyz/",
+    width: "w-52"
   }
 ];
 

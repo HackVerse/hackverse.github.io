@@ -35,7 +35,7 @@ export function CanvasRevealEffectDemo() {
       prize: "₹10,000",
       icon: "/tracks/WomeninTech.png"
     },
-        {
+    {
       title: "The Green Vault: Environment & Energy Conservation",
       description: "Tackle environmental challenges, energy efficiency, and conservation innovations.",
       prize: "₹10,000",
@@ -47,57 +47,55 @@ export function CanvasRevealEffectDemo() {
       prize: "₹10,000",
       icon: "/tracks/Product.png"
     }
-];
-
- /* Repeating Background Text */
-
- const BackgroundText = React.memo(() => {
-  const repeatText = 'heists';
-  
-  const alignmentVariations = [
-    `&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
-    `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
-    `&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
-    `&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`
   ];
 
+  const BackgroundText = React.memo(() => {
+    const repeatText = 'heists';
+    
+    const alignmentVariations = [
+      `&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+      `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+      `&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`,
+      `&nbsp;&nbsp;&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}&nbsp;&nbsp;${repeatText}`
+    ];
+
+    return (
+      <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36">
+        {[...Array(24)].map((_, index) => (
+          <motion.div
+            key={index}
+            className="text-[96px] whitespace-nowrap font-black tracking-wider md:tracking-widest"
+            style={{ 
+              WebkitTextStroke: index === 1 || index === 15 ? '1px' : '0px red'
+            }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 0.6, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ 
+              duration: 1, 
+              ease: "easeOut", 
+              delay: index * 0.05 
+            }}
+            dangerouslySetInnerHTML={{
+              __html: alignmentVariations[index % alignmentVariations.length]
+            }}
+          />
+        ))}
+      </div>
+    );
+  });
+
+  BackgroundText.displayName = 'BackgroundText';
+
   return (
-    <div className="absolute inset-0 w-[150%] h-full overflow-hidden flex flex-col text-[#434343] opacity-60 -translate-x-36">
-      {[...Array(24)].map((_, index) => (
-        <motion.div
-          key={index}
-          className="text-[96px] whitespace-nowrap font-black tracking-wider md:tracking-widest"
-          style={{ 
-            WebkitTextStroke: index === 1 || index === 15 ? '1px' : '0px red'
-          }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ 
-            duration: 1, 
-            ease: "easeOut", 
-            delay: index * 0.05 
-          }}
-          dangerouslySetInnerHTML={{
-            __html: alignmentVariations[index % alignmentVariations.length]
-          }}
-        />
-      ))}
-    </div>
-  );
-});
-
-BackgroundText.displayName = 'BackgroundText';
-
-return (
-  <div className="relative overflow-hidden bg-black z-10 min-h-screen">
-    <BackgroundText />
-    <div
-      className="absolute inset-0 z-10 bg-cover bg-right bg-fixed hidden md:block"
-      style={{
-        backgroundImage: `url('backgrounds/bg_prof.jpg')`,
-      }}
-    ></div>
+    <div className="relative overflow-hidden bg-black z-10 min-h-screen">
+      <BackgroundText />
+      <div
+        className="absolute inset-0 z-10 bg-cover bg-right bg-fixed hidden md:block"
+        style={{
+          backgroundImage: `url('backgrounds/bg_prof.jpg')`,
+        }}
+      ></div>
 
       {/* Title  */}
       <div className="relative flex justify-center items-start pt-8 md:pt-20 z-20 w-full">

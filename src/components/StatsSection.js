@@ -57,13 +57,16 @@ const StatItem = React.memo(({ number, label, delay }) => {
     const end = parseInt(number.replace(/\D/g, ""), 10); // Extract number
     if (start === end) return;
 
-    const duration = 2000; // Animation duration in milliseconds
-    const incrementTime = Math.abs(Math.floor(duration / end));
+    // Set animation duration based on the number's magnitude
+    const duration = end > 1000 ? 2000 : end > 500 ? 1900 : 1800; // Adjust durations
+    const increment = end > 1000 ? Math.ceil(end / 60) : Math.ceil(end / 100); // Adjust increment step    
+    const incrementTime = Math.abs(Math.floor(duration / (end / increment)));
+
     const timer = setInterval(() => {
-      start += 2;
-      if (start > end) {
+      start += increment;
+      if (start >= end) {
         clearInterval(timer);
-        start = end;
+        start = end; // Ensure the count stops exactly at the target
       }
       setCount(start);
     }, incrementTime);

@@ -94,17 +94,6 @@ const LandingPage = () => {
     };
   }, [bottomSectionControls, subtitleControls, titleControls, logoControls]);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://apply.devfolio.co/v2/sdk.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   const fadeInFromBottom = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
@@ -126,7 +115,7 @@ const LandingPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          11-12th JANUARY 2025
+    11-12th JANUARY 2025
         </motion.p>
         <motion.h1
           ref={titleRef}
@@ -157,35 +146,33 @@ const LandingPage = () => {
         animate={bottomSectionControls}
         variants={fadeInFromBottom}
       >
-<div className="w-[90%] sm:w-[80%] flex flex-col sm:flex-row items-center justify-between bg-[#3d3d3d] bg-opacity-60 py-4 px-6 rounded-lg space-y-4 sm:space-y-0 sm:space-x-4 relative">
-  {/* Left Button - Sponsor Us */}
-  <div className="w-full sm:w-auto flex justify-center sm:justify-start">
-    <a href="mailto:hackverse@nitk.edu.in" target="_blank" rel="noopener noreferrer">
-      <motion.button
-        className="text-white uppercase text-xl font-bold tracking-wider hover:text-gray-300 flex items-center"
-        whileHover={{ scale: 1.05 }}
-      >
-        <IconArrowRight className="mr-2 w-6 h-6" />
-        Sponsor Us
-      </motion.button>
-    </a>
-  </div>
+        <div className="w-[90%] sm:w-[80%] flex flex-col sm:flex-row items-center justify-between bg-[#3d3d3d] bg-opacity-60 py-4 px-6 rounded-lg">
+          {/* Left Button - Sponsor Us */}
+          <a href="mailto:hackverse@nitk.edu.in" target="_blank" rel="noopener noreferrer">
+            <motion.button
+              className="text-white uppercase text-xl font-bold tracking-wider hover:text-gray-300 flex items-center"
+              whileHover={{ scale: 1.05 }}
+            >
+              <IconArrowRight className="mr-2 w-6 h-6" /> {/* Arrow Icon */}
+              Sponsor Us
+            </motion.button>
+          </a>
 
-  {/* Center Text - Absolutely positioned to ensure precise center */}
-  <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-nowrap text-white text-sm md:text-lg uppercase tracking-wider">
-    24-Hour Long Hackathon @ NITK, Surathkal
-  </div>
+          {/* Center Text */}
+          <div className="text-center text-white text-sm md:text-lg uppercase tracking-wider my-4 sm:my-0 flex-grow">
+            24-Hour Long Hackathon @ NITK, Surathkal
+          </div>
 
-  {/* Right Button - Apply with Devfolio */}
-  <div className="w-full sm:w-auto flex justify-center sm:justify-end">
-    <div
-      className="apply-button"
-      data-hackathon-slug="YOUR-HACKATHON-SLUG"
-      data-button-theme="dark-inverted"
-      style={{ height: "44px", width: "312px" }}
-    ></div>
-  </div>
-</div>
+          {/* Right Button - Apply Now */}
+          <a href="https://hackverse5.devfolio.co/" target="_blank" rel="noopener noreferrer">
+            <motion.button
+              className="bg-[#be2525] text-white text-xl px-4 py-2 rounded-md font-bold uppercase tracking-wider hover:bg-red-700"
+              whileHover={{ scale: 1.05 }}
+            >
+              Apply Now!
+            </motion.button>
+          </a>
+        </div>
       </motion.div>
     </div>
   );

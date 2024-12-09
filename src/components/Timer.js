@@ -40,7 +40,7 @@ function Timer() {
 
   return (
     <div
-      className="w-full h-56 flex flex-col items-center justify-end"
+      className="w-full h-56 flex flex-col items-center justify-center md:justify-end"
       style={{ background: "linear-gradient(180deg, #360202, #000)" }}
     >
       {/* "Registration Ends In" Label */}

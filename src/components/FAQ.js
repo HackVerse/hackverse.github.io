@@ -7,7 +7,7 @@ const FAQ = () => {
     {
       value: 'faq-1',
       question: 'Is this hackathon an online event or offline?',
-      answer: 'Hackverse 4.0 is an offline event.'
+      answer: 'Hackverse 5.0 is an offline event.'
     },
     {
       value: 'faq-2',

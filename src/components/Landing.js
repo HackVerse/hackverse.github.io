@@ -100,7 +100,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="relative h-dvh md:h-[96vh] bg-cover bg-center text-white" style={{ backgroundImage: "url('/backgrounds/Landing-Bg.png')" }}>
+    <div className="relative h-dvh md:h-[96vh] bg-cover bg-center text-white" style={{ backgroundImage: "url('/backgrounds/bg-landing-new.png')" }}>
       {/* Infinite Scrolling Marquee */}
       <div className="absolute top-2 md:top-5 w-full overflow-hidden bg-white py-2">
         <MarqueeText />
@@ -124,7 +124,7 @@ const LandingPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          HACK <span className="bg-[#7B181D] text-4xl px-2 pb-2 pt-1 md:text-6xl md:px-4 md:pb-4 md:pt-2 inline-block transform -translate-y-[10px] md:-translate-y-4">5.0</span> VERSE
+          HACK <span className="bg-[#7B181D] text-5xl px-2 pb-2 pt-[3px] md:text-7xl md:px-4 md:pb-4 md:pt-[7px] inline-block transform -translate-y-[4px] md:-translate-y-[11px]">5.0</span> VERSE
         </motion.h1>
 
         <motion.img

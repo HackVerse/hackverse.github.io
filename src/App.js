@@ -15,6 +15,7 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Team from "./components/Team";
+import NotFoundPage from "./components/NotFoundPage";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -86,6 +87,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/team" element={<Team />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
     </Router>

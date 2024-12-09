@@ -63,7 +63,7 @@ const PrizeRow = ({ prize, medal, alt }) => (
       alt={alt} 
       className="w-12 h-12 md:w-20 md:h-20 translate-y-[6px] object-contain" 
     />
-    <span className="text-2xl md:text-5xl font-semibold">{prize}</span>
+    <span className="text-2xl md:text-5xl font-bold">{prize}</span>
   </div>
 );
 
@@ -129,8 +129,13 @@ const StickyScrollSection = () => {
     },
     {
       title: "TRACK PRIZES",
-      description: "BEST TRACK PRIZES for Each Track\n\n₹10,000 per Track"
-    }
+      description: (
+        <>
+          BEST TRACK PRIZES for Each Track<br /><br />
+          <strong>₹10,000</strong>  per Track
+        </>
+      )
+          }
   ], []);
 
   useEffect(() => {

@@ -149,7 +149,6 @@ const Sponsor = () => {
             hackverse@nitk.edu.in
           </a>
           <br />
-          and break through the snow barrier to shape the future of tech!
         </p>
 
         {/* Sponsor Logos */}

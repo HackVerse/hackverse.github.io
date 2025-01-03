@@ -15,7 +15,7 @@ function Timer() {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-      const targetDate = new Date('2024-12-27T00:00:00');
+      const targetDate = new Date('2025-01-11T12:00:00');
       const timeDiff = targetDate - now;
 
       if (timeDiff <= 0) {
@@ -40,7 +40,7 @@ function Timer() {
 
   return (
     <div
-      className="w-full h-56 flex flex-col items-center justify-center md:justify-end"
+      className="w-full h-56 flex flex-col items-center justify-center"
       style={{ background: "linear-gradient(180deg, #360202, #000)" }}
     >
       {/* "Registration Ends In" Label */}
@@ -51,7 +51,7 @@ function Timer() {
         variants={fadeIn}
         transition={{ duration: 2, ease: "easeOut" }}
       >
-        Registration Ends In
+        Hackathon starts in
       </motion.div>
 
       {/* Timer Container */}

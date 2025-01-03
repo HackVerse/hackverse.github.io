@@ -108,12 +108,12 @@ const Footer = () => {
             Code of Conduct
           </a>
            | 
-          <a href="./" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
+          <a href="https://docs.google.com/document/d/16LQKNPb3Zd4LskI7cWKVFcQzX7n4duA_fNveUn9KGWk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
             Terms & Conditions
           </a>
         </p>
         <p>
-          © 2024 All rights reserved | Made with <span className="bi bi-heart-fill text-[#9B1B21]">❤</span> by the
+          © 2025 All rights reserved | Made with <span className="bi bi-heart-fill text-[#9B1B21]">❤</span> by the
           <a href="/" className="text-[#9B1B21] hover:underline"> Hackverse Team</a>
         </p>
       </div>

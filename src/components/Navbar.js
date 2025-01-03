@@ -103,9 +103,9 @@ const Navbar = () => {
       <li className="p-1 font-normal hover:text-red-900 ">
         <Link to="/gallery" onClick={() => handleScroll('gallery')} className="flex items-center">GALLERY</Link>
       </li>
-      {/* <li className="p-1 font-normal hover:text-red-900">
+      <li className="p-1 font-normal hover:text-red-900">
         <Link to="/team" onClick={() => handleScroll('team')} className="flex items-center">TEAM</Link>
-      </li> */}
+      </li>
       <div className="flex items-center gap-4 p-1 md:hidden">
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
           <IconBrandLinkedin strokeWidth={1.2} className="hover:text-red-900" />

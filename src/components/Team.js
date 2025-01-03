@@ -3,178 +3,156 @@ import HoverEffect from './ui/card-hover-effect-2';
 
  /* team members info */
 
-const teamMembers = {
+ const teamMembers = {
   patron: [
     {
-      name: "Patron Name",
-      short_desc: "Patron Title",
-      image: "img/person.png",
-      twitter_url: "https://twitter.com/patron",
-      github_url: "https://github.com/patron",
-      linkedin_url: "https://linkedin.com/in/patron",
+      name: "Prof. B Ravi",
+      short_desc: "Director",
+      email: "director@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/prof-b-ravi",
+      twitter_url: "",
+      image: "/team/director.jpg",
+    },
+    {
+      name: "Prof. Subhash C. Yaragal",
+      short_desc: "Deputy Director",
+      email: "dydirector@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com",
+      twitter_url: "",
+      image: "/team/deputy_director.jpeg",
     },
   ],
+
   facultyAdvisors: [
     {
-      name: "Faculty Advisor 1",
-      short_desc: "Advisor Title",
-      image: "img/person.png",
-      twitter_url: "https://twitter.com/advisor1",
-      github_url: "https://github.com/advisor1",
-      linkedin_url: "https://linkedin.com/in/advisor1",
+      name: "Dr. Basavaraj Talawar",
+      short_desc: "Assistant Professor",
+      email: "basavaraj@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/basavarajtalwar/",
+      twitter_url: "",
+      image: "/team/basavaraj_associate.jpeg",
     },
     {
-      name: "Faculty Advisor 2",
-      short_desc: "Advisor Title",
-      image: "img/person.png",
-      twitter_url: "https://twitter.com/advisor2",
-      github_url: "https://github.com/advisor2",
-      linkedin_url: "https://linkedin.com/in/advisor2",
+      name: "Dr. Sowmya Kamath S.",
+      short_desc: "Assistant Professor",
+      email: "sowmyakamath@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/sowmya-kamath-nitk/",
+      twitter_url: "",
+      image: "/team/sowmya_associate.jpg",
     },
     {
-      name: "Faculty Advisor 3",
-      short_desc: "Advisor Title",
-      image: "img/person.png",
-      twitter_url: "https://twitter.com/advisor3",
-      github_url: "https://github.com/advisor3",
-      linkedin_url: "https://linkedin.com/in/advisor3",
+      name: "Dr. Suprabha K. R.",
+      short_desc: "Assistant Professor",
+      email: "suprabha@nitk.ac.in",
+      linkedin_url: "",
+      twitter_url: "",
+      image: "/team/suprabha_associate.jpg",
     },
   ],
+
   advisoryCommittee: [
     {
-      name: "Committee Member 1",
-      short_desc: "Committee Title",
-      image: "img/person.png",
-      twitter_url: "https://twitter.com/committee1",
-      github_url: "https://github.com/committee1",
-      linkedin_url: "https://linkedin.com/in/committee1",
+      name: "Prof. A Chitharanjan Hegde",
+      short_desc: "Dean (Students Welfare)",
+      email: "deansw@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/prof-a-chitharanjan-hegde-4a51154b/",
+      twitter_url: "",
+      image: "/team/dean_student.jpg",
     },
-    // Add 5 more committee members here
+    {
+      name: "Prof. Udaya Bhat",
+      short_desc: "Dean (Research & Consultancy)",
+      email: "dean.rc@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/udaya-bhat-k-55996a71/",
+      twitter_url: "",
+      image: "/team/dean_research.jpg",
+    },
+    {
+      name: "Prof. Dwarakish G S",
+      short_desc: "Dean (Academic)",
+      email: "deanacademic@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com",
+      twitter_url: "",
+      image: "/team/dean_academic.jpg",
+    },
+    {
+      name: "Prof. Shreekantha S. Rao",
+      short_desc: "Dean (Alumni & Corporate Relations)",
+      email: "deanaair@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/alumni-and-corporate-relations-dean-nitk-surathkal-02b328172/",
+      twitter_url: "",
+      image: "/team/dean_corporate.jpg",
+    },
+    {
+      name: "Prof. Gangadharan K V",
+      short_desc: "Dean (Planning & Development)",
+      email: "deanpd@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/kvganga/",
+      twitter_url: "",
+      image: "/team/dean_planning.jpg",
+    },
+    {
+      name: "Prof. T. Laxminidhi",
+      short_desc: "Dean (Faculty Welfare)",
+      email: "deanfw@nitk.edu.in",
+      linkedin_url: "https://www.linkedin.com/in/laxminidhi-t-undefined-0b9159242/",
+      twitter_url: "",
+      image: "/team/dean_faculty.jpg",
+    },
+    {
+      name: "Shashi Bhushan Arya",
+      short_desc: "Associate Professor",
+      email: "sbarya@nitk.edu.in",
+      linkedin_url: "",
+      twitter_url: "",
+      image: "/team/shashi_associate.png",
+    },
   ],
+
   studentTeam: [
     {
       name: "Student Member 1",
       short_desc: "Student Title",
-      image: "img/person.png",
-      twitter_url: "https://twitter.com/student1",
-      github_url: "https://github.com/student1",
+      email: "",
       linkedin_url: "https://linkedin.com/in/student1",
+      twitter_url: "https://twitter.com/student1",
+      image: "/team/person.png",
     },
     {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      },
-      {
-        name: "Student Member 1",
-        short_desc: "Student Title",
-        image: "img/person.png",
-        twitter_url: "https://twitter.com/student1",
-        github_url: "https://github.com/student1",
-        linkedin_url: "https://linkedin.com/in/student1",
-      }
-    
+      name: "Student Member 2",
+      short_desc: "Student Title",
+      email: "",
+      linkedin_url: "https://linkedin.com/in/student2",
+      twitter_url: "https://twitter.com/student2",
+      image: "/team/person.png",
+    },
+    {
+      name: "Student Member 3",
+      short_desc: "Student Title",
+      email: "",
+      linkedin_url: "https://linkedin.com/in/student3",
+      twitter_url: "https://twitter.com/student3",
+      image: "/team/person.png",
+    },
+    {
+      name: "Student Member 4",
+      short_desc: "Student Title",
+      email: "",
+      linkedin_url: "https://linkedin.com/in/student4",
+      twitter_url: "https://twitter.com/student4",
+      image: "/team/person.png",
+    },
+    {
+      name: "Student Member 5",
+      short_desc: "Student Title",
+      email: "",
+      linkedin_url: "https://linkedin.com/in/student5",
+      twitter_url: "https://twitter.com/student5",
+      image: "/team/person.png",
+    },
   ],
 };
+
 
 export function Team() {
   return (
@@ -197,9 +175,9 @@ export function Team() {
       ></div>
       <div className="relative z-10">
         <Section title="Patron" members={teamMembers.patron} />
-        <Section title="Faculty Advisors" members={teamMembers.facultyAdvisors} />
         <Section title="Advisory Committee" members={teamMembers.advisoryCommittee} />
-        <Section title="Student Team" members={teamMembers.studentTeam} />
+        <Section title="Faculty Advisors" members={teamMembers.facultyAdvisors} />
+        {/* <Section title="Student Team" members={teamMembers.studentTeam} /> */}
       </div>
     </div>
   );
@@ -207,7 +185,7 @@ export function Team() {
 
 const Section = ({ title, members }) => (
     <div className="py-10">
-      <h2 className="text-5xl font-bold text-center text-white mb-8">
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-8">
         <span className="bg-[#7B181D] px-4 pb-2">{title}</span>
       </h2>
       <HoverEffect items={members} className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center" />

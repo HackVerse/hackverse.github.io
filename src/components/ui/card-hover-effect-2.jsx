@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
-import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail } from "@tabler/icons-react";
 import { cn } from "../../utils/cn";
 
 export const HoverEffect = ({ items, className }) => {
@@ -21,7 +21,7 @@ export const HoverEffect = ({ items, className }) => {
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="relative group block p-2 h-full w-full max-w-[320px] mx-auto"
+              className="relative group block p-2 h-full w-full max-w-[225px] mx-auto"
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -63,7 +63,7 @@ const FadeInCard = ({ item }) => {
       initial={{ opacity: 0, translateY: 20 }}
       animate={isInView ? { opacity: 1, translateY: 0 } : {}}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="rounded-2xl h-full w-full max-w-[320px] p-4 overflow-hidden bg-[#7B181D] border border-transparent relative z-20"
+      className="rounded-2xl h-full w-full max-w-[225px] py-4 overflow-hidden bg-[#7B181D] border border-transparent relative z-20"
     >
       <img
         src={item.image}
@@ -81,9 +81,9 @@ const FadeInCard = ({ item }) => {
               <IconBrandTwitter size={24} strokeWidth={1.2} className="hover:text-primary-purple hover:stroke-2" />
             </a>
           )}
-          {item.github_url && (
-            <a href={item.github_url} target="_blank" rel="noopener noreferrer">
-              <IconBrandGithub size={24} strokeWidth={1.2} className="hover:text-primary-purple hover:stroke-2" />
+          {item.email && (
+            <a href={`mailto:${item.email}`} target="_blank" rel="noopener noreferrer">
+              <IconMail size={24} strokeWidth={1.2} className="hover:text-primary-purple hover:stroke-2" />
             </a>
           )}
           {item.linkedin_url && (
@@ -107,7 +107,7 @@ export const CardTitle = ({ className, children }) => {
 
 export const CardDescription = ({ className, children }) => {
   return (
-    <p className={cn("mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm", className)}>
+    <p className={cn("mt-4 text-zinc-400 tracking-wide leading-relaxed text-sm", className)}>
       {children}
     </p>
   );

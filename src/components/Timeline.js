@@ -1,13 +1,35 @@
 import { Timeline } from "./ui/timeline";
 
 export function TimelineDemo() {
+
+  const LocationIcon = ({ className = "w-6 h-6", ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className={className}
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+      />
+    </svg>
+  );
+
   const data = [
     {
       title: (
         <div>
-          <p className="mb-2">
-            11 January 2025
-          </p>
+          <p className="mb-2">11 January 2025</p>
           <p className="text-white dark:text-neutral-400 text-lg md:text-2xl">
             08:30 AM
           </p>
@@ -15,12 +37,16 @@ export function TimelineDemo() {
       ),
       content: (
         <div>
-          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
+          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-2">
             Participants Check-in
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C
+          </div>
         </div>
       ),
-    },
+    },       
     {
       title: (
         <div>
@@ -34,9 +60,13 @@ export function TimelineDemo() {
       ),
       content: (
         <div>
-          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
+          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-2">
             Opening Ceremony
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C SEMINAR HALL
+          </div>
         </div>
       ),
     },

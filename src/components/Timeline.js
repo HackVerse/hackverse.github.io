@@ -65,7 +65,7 @@ export function TimelineDemo() {
           </p>
           <div className="flex items-center text-gray-400 text-lg md:text-2xl">
             <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
-            LHC-C SEMINAR HALL
+            SEMINAR HALL, LHC-C
           </div>
         </div>
       ),
@@ -86,6 +86,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Opening Announcement
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C
+          </div>
         </div>
       ),
     },
@@ -105,6 +109,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Talk/Speaker Session
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C
+          </div>
         </div>
       ),
     },
@@ -124,28 +132,36 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Coding Begins
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            CLASSROOMS, LHC-C
+          </div>
         </div>
       ),
     },
-    {
-      title: (
-        <div>
-          <p className="mb-2">
-            11 January 2025
-          </p>
-          <p className="text-white dark:text-neutral-400 text-lg md:text-2xl">
-            03:00 PM
-          </p>
-        </div>
-      ),
-      content: (
-        <div>
-          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
-            Talk 1
-          </p>
-        </div>
-      ),
-    },
+    // {
+    //   title: (
+    //     <div>
+    //       <p className="mb-2">
+    //         11 January 2025
+    //       </p>
+    //       <p className="text-white dark:text-neutral-400 text-lg md:text-2xl">
+    //         03:00 PM
+    //       </p>
+    //     </div>
+    //   ),
+    //   content: (
+    //     <div>
+    //       <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
+    //         Talk 1
+    //       </p>
+    //       <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+    //         <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+    //         SEMINAR HALL, LHC-C
+    //       </div>
+    //     </div>
+    //   ),
+    // },
     {
       title: (
         <div>
@@ -162,6 +178,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Networking Session
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            SEMINAR HALL, LHC-C
+          </div>
         </div>
       ),
     },
@@ -181,6 +201,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Midnight Evaluations
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C
+          </div>
         </div>
       ),
     },
@@ -200,6 +224,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Midnight Evaluations
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C
+          </div>
         </div>
       ),
     },
@@ -219,6 +247,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Coding Ends and Judging Begins
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            CLASSROOMS, LHC-C
+          </div>
         </div>
       ),
     },
@@ -238,6 +270,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Live Exhibitions
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            CLASSROOMS, LHC-C
+          </div>
         </div>
       ),
     },
@@ -257,25 +293,10 @@ export function TimelineDemo() {
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Announcement of top 10 teams
           </p>
-        </div>
-      ),
-    },
-    {
-      title: (
-        <div>
-          <p className="mb-2">
-            12 January 2025
-          </p>
-          <p className="text-white dark:text-neutral-400 text-lg md:text-2xl">
-            05:00 PM
-          </p>
-        </div>
-      ),
-      content: (
-        <div>
-          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
-            Live Judging of Top 10 Teams
-          </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            LHC-C
+          </div>
         </div>
       ),
     },
@@ -293,8 +314,35 @@ export function TimelineDemo() {
       content: (
         <div>
           <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
+            Live Judging of Top 10 Teams
+          </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            SEMINAR HALL, LHC-C
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: (
+        <div>
+          <p className="mb-2">
+            12 January 2025
+          </p>
+          <p className="text-white dark:text-neutral-400 text-lg md:text-2xl">
+            07:00 PM
+          </p>
+        </div>
+      ),
+      content: (
+        <div>
+          <p className="text-white dark:text-neutral-200 text-xl md:text-3xl font-normal mb-4">
             Results Announcement and Closing Ceremony
           </p>
+          <div className="flex items-center text-gray-400 text-lg md:text-2xl">
+            <LocationIcon className="w-5 h-5 translate-y-[0.75px] md:w-6 md:h-6 mr-1" />
+            SEMINAR HALL, LHC-C
+          </div>
         </div>
       ),
     },

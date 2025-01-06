@@ -4,7 +4,7 @@ import HoverEffect from './ui/card-hover-effect-2';
  /* team members info */
 
  const teamMembers = {
-  patron: [
+  patron1: [
     {
       name: "Prof. B Ravi",
       short_desc: "Director",
@@ -12,7 +12,10 @@ import HoverEffect from './ui/card-hover-effect-2';
       linkedin_url: "https://www.linkedin.com/in/prof-b-ravi",
       twitter_url: "",
       image: "/team/director.jpg",
-    },
+    }
+  ],
+
+  patron2: [
     {
       name: "Prof. Subhash C. Yaragal",
       short_desc: "Deputy Director",
@@ -20,13 +23,13 @@ import HoverEffect from './ui/card-hover-effect-2';
       linkedin_url: "https://www.linkedin.com",
       twitter_url: "",
       image: "/team/deputy_director.jpeg",
-    },
+    }
   ],
 
   facultyAdvisors: [
     {
       name: "Dr. Basavaraj Talawar",
-      short_desc: "Assistant Professor",
+      short_desc: "Associate Professor",
       email: "basavaraj@nitk.edu.in",
       linkedin_url: "https://www.linkedin.com/in/basavarajtalwar/",
       twitter_url: "",
@@ -34,7 +37,7 @@ import HoverEffect from './ui/card-hover-effect-2';
     },
     {
       name: "Dr. Sowmya Kamath S.",
-      short_desc: "Assistant Professor",
+      short_desc: "Associate Professor",
       email: "sowmyakamath@nitk.edu.in",
       linkedin_url: "https://www.linkedin.com/in/sowmya-kamath-nitk/",
       twitter_url: "",
@@ -42,9 +45,9 @@ import HoverEffect from './ui/card-hover-effect-2';
     },
     {
       name: "Dr. Suprabha K. R.",
-      short_desc: "Assistant Professor",
+      short_desc: "Associate Professor",
       email: "suprabha@nitk.ac.in",
-      linkedin_url: "",
+      linkedin_url: "https://www.linkedin.com/",
       twitter_url: "",
       image: "/team/suprabha_associate.jpg",
     },
@@ -103,7 +106,7 @@ import HoverEffect from './ui/card-hover-effect-2';
       name: "Shashi Bhushan Arya",
       short_desc: "Associate Professor",
       email: "sbarya@nitk.edu.in",
-      linkedin_url: "",
+      linkedin_url: "https://www.linkedin.com/",
       twitter_url: "",
       image: "/team/shashi_associate.png",
     },
@@ -174,7 +177,8 @@ export function Team() {
         }}
       ></div>
       <div className="relative z-10">
-        <Section title="Patron" members={teamMembers.patron} />
+        <Section title="Patron" members={teamMembers.patron1} />
+        <Section title="" members={teamMembers.patron2} />
         <Section title="Advisory Committee" members={teamMembers.advisoryCommittee} />
         <Section title="Faculty Advisors" members={teamMembers.facultyAdvisors} />
         {/* <Section title="Student Team" members={teamMembers.studentTeam} /> */}
@@ -184,11 +188,15 @@ export function Team() {
 }
 
 const Section = ({ title, members }) => (
-    <div className="py-10">
+    <div className="pb-10">
+      ( title.length === 0 ?
       <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-8">
-        <span className="bg-[#7B181D] px-4 pb-2">{title}</span>
+        <span className={`${title.length === 0 ? "" : "bg-[#7B181D]"} px-4 pb-2`}>{title}</span>
       </h2>
-      <HoverEffect items={members} className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center" />
+      :
+      null
+      )
+      <HoverEffect items={members} className="" />
     </div>
   );
 

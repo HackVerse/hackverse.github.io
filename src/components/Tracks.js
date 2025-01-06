@@ -29,12 +29,12 @@ export function CanvasRevealEffectDemo() {
       prize: "₹10,000",
       icon: "/tracks/Security.png"
     },
-    {
-      title: "The Green Vault: Environment & Energy Conservation",
-      description: "Tackle environmental challenges, energy efficiency, and conservation innovations.",
-      prize: "₹10,000",
-      icon: "/tracks/Energy.png"
-    },
+    // {
+    //   title: "The Green Vault: Environment & Energy Conservation",
+    //   description: "Tackle environmental challenges, energy efficiency, and conservation innovations.",
+    //   prize: "₹10,000",
+    //   icon: "/tracks/Energy.png"
+    // },
     {
       title: "Women In Tech",
       description: "Celebrating and empowering women in technology by rewarding the best-performing all-women team with innovative and impactful tech solutions.",

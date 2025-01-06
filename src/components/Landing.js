@@ -4,11 +4,11 @@ import { IconArrowRight } from '@tabler/icons-react';
 
 const MarqueeText = () => {
   const phrases = [
-    "REGISTRATION IS NOW OPEN",
-    "REGISTRATION IS NOW OPEN",
-    "REGISTRATION IS NOW OPEN",
-    "REGISTRATION IS NOW OPEN",
-    "REGISTRATION IS NOW OPEN"
+    "REGISTRATION CLOSED",
+    "REGISTRATION CLOSED",
+    "REGISTRATION CLOSED",
+    "REGISTRATION CLOSED",
+    "REGISTRATION CLOSED"
   ];
 
   const combinedText = phrases.join(" • ");
@@ -169,7 +169,7 @@ const LandingPage = () => {
               className="bg-[#be2525] text-white text-xl px-4 py-2 rounded-md font-bold uppercase tracking-wider hover:bg-red-700"
               whileHover={{ scale: 1.05 }}
             >
-              Apply Now!
+              Devfolio
             </motion.button>
           </a>
         </div>

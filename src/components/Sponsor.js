@@ -48,6 +48,13 @@ const sponsors = [
     altText: "Aptos Blockchain Logo"
   },
   { 
+    name: "Avalanche", 
+    logo: "./sponsor/AvalancheLogo_Horizontal_1C_Red.png", 
+    link: "https://www.avax.network/ ",
+    width: "w-52",
+    altText: "Avalanche Logo"
+  },
+  { 
     name: "Balsamiq", 
     logo: "./sponsor/balsamiq-logo.png", 
     link: "https://balsamiq.com",
@@ -60,6 +67,13 @@ const sponsors = [
     link: "https://ethindia.co",
     width: "w-52",
     altText: "ETHIndia Logo"
+  },
+  { 
+    name: "FAB Builder", 
+    logo: "./sponsor/fab white.png", 
+    link: "https://fabbuilder.com/ ",
+    width: "w-52",
+    altText: "FAB Builder Logo"
   },
   { 
     name: "Devfolio", 

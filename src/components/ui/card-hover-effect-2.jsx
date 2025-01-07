@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import {
-  IconBrandGithub,
+  // IconBrandGithub,
   IconBrandLinkedin,
   IconBrandTwitter,
   IconMail,

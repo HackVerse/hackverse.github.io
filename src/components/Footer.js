@@ -114,7 +114,7 @@ const Footer = () => {
         </p>
         <p>
           © 2025 All rights reserved | Made with <span className="bi bi-heart-fill text-[#9B1B21]">❤</span> by the
-          <a href="/" className="text-[#9B1B21] hover:underline"> Hackverse Team</a>
+          <a href="/team" className="text-[#9B1B21] hover:underline"> Hackverse Team</a>
         </p>
       </div>
     </footer>

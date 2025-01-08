@@ -167,7 +167,7 @@ const Card = ({ title, description, prize, icon }) => {
             <div className="uppercase absolute inset-0 bg-black/70 flex flex-col gap-y-10 items-center justify-center text-white p-4 text-center">
               <h2 className="uppercase text-2xl text-white font-bold ">{title}</h2>
               <p className="uppercase text-base opacity-70">{description}</p>
-              <div className="uppercase text-2xl font-semibold text-[#7B181D]">Prize: {prize}</div>
+              <div className="uppercase text-2xl font-semibold text-[#7B181D]">Prize: {prize} <br/> <span className="font-thin text-[15px]">prizes worth</span></div>
             </div>
           </motion.div>
         )}

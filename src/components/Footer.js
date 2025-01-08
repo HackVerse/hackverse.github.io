@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -103,20 +104,34 @@ const Footer = () => {
 
       {/* Footer Links and Copyright */}
       <div className="container mx-auto text-center mt-8 space-y-2 border-t-2 pt-3 border-white">
-        <p>
-          <a href="https://devfolio.co/code-of-conduct" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
-            Code of Conduct
-          </a>
-           | 
-          <a href="https://docs.google.com/document/d/16LQKNPb3Zd4LskI7cWKVFcQzX7n4duA_fNveUn9KGWk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-[#9B1B21] hover:underline">
-            Terms & Conditions
-          </a>
-        </p>
-        <p>
-          © 2025 All rights reserved | Made with <span className="bi bi-heart-fill text-[#9B1B21]">❤</span> by the
-          <a href="/team" className="text-[#9B1B21] hover:underline"> Hackverse Team</a>
-        </p>
-      </div>
+  <p>
+    <a
+      href="https://devfolio.co/code-of-conduct"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#9B1B21] hover:underline"
+    >
+      Code of Conduct
+    </a>
+    &nbsp;|&nbsp;
+    <a
+      href="https://docs.google.com/document/d/16LQKNPb3Zd4LskI7cWKVFcQzX7n4duA_fNveUn9KGWk/edit?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#9B1B21] hover:underline"
+    >
+      Terms & Conditions
+    </a>
+  </p>
+  <p>
+    © 2025 All rights reserved | Made with{" "}
+    <span className="bi bi-heart-fill text-[#9B1B21]">❤</span> by the
+    <Link to="/team" className="text-[#9B1B21] hover:underline">
+      {" "}
+      Hackverse Team
+    </Link>
+  </p>
+</div>
     </footer>
   );
 };

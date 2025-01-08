@@ -318,20 +318,23 @@ export function Team() {
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='dot-pattern' patternUnits='userSpaceOnUse' width='30' height='30'%3E%3Ccircle cx='15' cy='15' r='2' fill='%23666' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23dot-pattern)' /%3E%3C/svg%3E")`,
-          maskImage: "radial-gradient(ellipse at center, black, transparent 70%)"
+          maskImage: "radial-gradient(ellipse at center, black, transparent 70%)",
         }}
       ></div>
-      {/* extra radial fade for the black background */}
+      {/* Extra radial fade for the black background */}
       <div
         className="absolute inset-0 w-full h-full bg-black"
         style={{
           opacity: 0.9,
-          maskImage: "radial-gradient(ellipse at center, black, transparent 70%)"
+          maskImage: "radial-gradient(ellipse at center, black, transparent 70%)",
         }}
       ></div>
       <div className="relative z-10">
-        <Section title="Patron" members={teamMembers.patron1} />
-        <Section title="" members={teamMembers.patron2} />
+        <Section
+          title="Patron"
+          members={teamMembers.patron1.concat(teamMembers.patron2)}
+          horizontal
+        />
         <Section title="Advisory Committee" members={teamMembers.advisoryCommittee} />
         <Section title="Faculty Advisors" members={teamMembers.facultyAdvisors} />
         {/* <Section title="Student Team" members={teamMembers.studentTeam} /> */}
@@ -340,17 +343,23 @@ export function Team() {
   );
 }
 
-const Section = ({ title, members }) => (
-    <div className="pb-10">
-      ( title.length === 0 ?
+const Section = ({ title, members, horizontal }) => (
+  <div className="pb-10">
+    {title.length > 0 && (
       <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-8">
-        <span className={`${title.length === 0 ? "" : "bg-[#7B181D]"} px-4 pb-2`}>{title}</span>
+        <span className={`${title.length === 0 ? "" : "bg-[#7B181D]"} px-4 pb-2`}>
+          {title}
+        </span>
       </h2>
-      :
-      null
-      )
+    )}
+    <div
+      className={`${
+        horizontal ? "flex flex-wrap justify-center gap-6" : ""
+      }`}
+    >
       <HoverEffect items={members} className="" />
     </div>
-  );
+  </div>
+);
 
 export default Team;

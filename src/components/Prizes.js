@@ -63,7 +63,7 @@ const PrizeRow = ({ prize, medal, alt }) => (
       alt={alt} 
       className="w-12 h-12 md:w-20 md:h-20 translate-y-[6px] object-contain" 
     />
-    <span className="text-2xl md:text-5xl font-bold">{prize}<br/><span className='font-thin text-[17px]'></span></span>
+    <span className="text-2xl md:text-5xl font-bold">{prize}<br/><span className='text-[#7B181D] font-thin text-[17px] opacity-100'>prizes worth</span></span>
   </div>
 );
 

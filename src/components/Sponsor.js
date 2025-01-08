@@ -62,6 +62,13 @@ const sponsors = [
     altText: "Balsamiq Logo"
   },
   { 
+    name: "Chess.com", 
+    logo: "./sponsor/chess_com.png", 
+    link: "https://www.chess.com/",
+    width: "w-52",
+    altText: "Chess.com Logo"
+  },
+  { 
     name: "ETHIndia", 
     logo: "./sponsor/ETHIndia.png", 
     link: "https://ethindia.co",
@@ -74,6 +81,13 @@ const sponsors = [
     link: "https://fabbuilder.com/ ",
     width: "w-52",
     altText: "FAB Builder Logo"
+  },
+  { 
+    name: "Flat logic", 
+    logo: "./sponsor/flatlogic.png", 
+    link: "https://flatlogic.com/ ",
+    width: "w-52",
+    altText: "Flat logic Logo"
   },
   { 
     name: "Devfolio", 
